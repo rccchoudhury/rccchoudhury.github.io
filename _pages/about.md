@@ -19,6 +19,4 @@ I'm a 4th-year PhD student in the Robotics Institute at Carnegie Mellon Universi
 
 I'm broadly interested in making video understanding faster and more efficient. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
 
-During my graduate studies, I've spent time as a research intern at [Meta FAIR](https://ai.meta.com/) (with Jing Huang).
-
-Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles. Even before that, I graduated from [Caltech](https://www.caltech.edu/). When I'm not working on research, I enjoy running, lifting weights, and listening to electronic music.
+During my graduate studies, I've spent time as a research intern at [Meta FAIR](https://ai.meta.com/) (with Jing Huang).Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles. Even before that, I graduated from [Caltech](https://www.caltech.edu/). When I'm not working on research, I enjoy running, lifting weights, and listening to electronic music.
