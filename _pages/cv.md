@@ -1,11 +1,8 @@
 ---
-layout: page
+layout: none
 permalink: /cv/
+redirect_to: /assets/pdf/cv_2024.pdf
 title: cv
 nav: true
 nav_order: 4
 ---
-
-<script type="text/javascript">
-    window.location.href = "/assets/pdf/cv_2024.pdf";
-</script>
