@@ -834,7 +834,13 @@ footer.sticky-bottom {
 
 // News
 .news {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;  // Increased margin below news section
+  
+  table {
+    td {
+      font-size: 1rem;
+    }
+  }
 }
 
 // Rouge Color Customization

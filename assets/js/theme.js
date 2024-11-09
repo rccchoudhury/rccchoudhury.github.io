@@ -1,23 +1,19 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// Toggle through light and dark theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
+  if (themeSetting == "light") {
     setThemeSetting("dark");
   } else {
-    setThemeSetting("system");
+    setThemeSetting("light");
   }
 };
 
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
   localStorage.setItem("theme", themeSetting);
-
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
-
   applyTheme();
 };
 
@@ -205,24 +201,19 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "light".
+// Determine the expected state of the theme toggle, which can be "dark" or "light".
+// Default is "light".
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
-  if (themeSetting == null) {
+  if (themeSetting != "dark" && themeSetting != "light") {
     return "light";
   }
   return themeSetting;
 };
 
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
+// Determine the computed theme, which can be "dark" or "light".
 let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-  return themeSetting;
+  return determineThemeSetting();
 };
 
 // Initialize the theme.
@@ -234,8 +225,13 @@ let initTheme = () => {
   // Apply the theme.
   applyTheme();
 
-  // Add event listener for system theme changes.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-    applyTheme();
+  // Add event listener to the theme toggle button.
+  document.addEventListener("DOMContentLoaded", function () {
+    const mode_toggle = document.getElementById("light-toggle");
+    if (mode_toggle) {
+      mode_toggle.addEventListener("click", function () {
+        toggleThemeSetting();
+      });
+    }
   });
 };
