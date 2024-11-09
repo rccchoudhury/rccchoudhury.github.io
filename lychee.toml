@@ -1,0 +1,54 @@
+# Lychee configuration file
+
+# Exclude these paths from link checking
+exclude = [
+    # Template documentation files
+    'INSTALL.md',
+    'CUSTOMIZE.md',
+    'CONTRIBUTING.md',
+    'FAQ.md',
+    'README.md',
+    'readme_preview/**/*',
+    
+    # Template internal references
+    '_sass/**/*',
+    '_config.yml',
+    '_bibliography/**/*',
+    '_data/**/*',
+    
+    # Build artifacts
+    'lighthouse_results/**/*',
+    '_layouts/*',
+    
+    # External sites we can't control
+    'https://www.haylab.caltech.edu/',
+    'https://sk1y101.github.io/',
+    'https://www.escontrela.me/',
+    'https://users.wpi.edu/~lfichera/',
+    'https://giograno.me/',
+    'https://niweera.gq/',
+    'https://abhinav-mehta.github.io/',
+    'https://sam-bieberich.github.io/',
+    '/al-folio/**/*',  # Exclude template paths
+    '/assets/pdf/**/*'  # Exclude local PDF files that will be added later
+]
+
+# Exclude these file types
+exclude_path = [
+    '*.js',
+    '*.css',
+    '*.svg',
+    '*.md'  # Exclude markdown files as they're mostly documentation
+]
+
+# Accept these status codes as valid
+accept = [200, 206, 429]
+
+# Maximum number of concurrent link checks
+max_concurrency = 8
+
+# Base URL for relative links
+base = "https://rccchoudhury.github.io"
+
+# Ignore case in URLs
+case_sensitive = false
