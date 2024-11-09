@@ -1,0 +1,17 @@
+.social-icons {
+  padding-top: 10px;
+  text-align: center;
+
+  a {
+    color: var(--global-text-color);
+    margin: 0 5px;
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
