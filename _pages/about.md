@@ -9,10 +9,11 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <div class="social-icons">
       <a href="mailto:rchoudhu@andrew.cmu.edu" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=G01350MAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-      <a href="https://x.com/rchoudhury997" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://twitter.com/rchoudhury997" title="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
 
 news: true # includes a list of news items
@@ -24,4 +25,4 @@ I'm a 4th-year PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) 
 
 I'm broadly interested in making video understanding faster and more efficient. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
 
-During my graduate studies, I've spent time as a research scientist intern at [Meta FAIR](https://ai.meta.com/) (with Jing Huang).Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles. Even before that, I graduated from [Caltech](https://www.caltech.edu/). When I'm not working on research, I enjoy running, lifting weights, and listening to electronic music.
+During my PhD, I interned at at [Meta FAIR](https://ai.meta.com/) (with Jing Huang).Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles. Even before that, I graduated from [Caltech](https://www.caltech.edu/). When I'm not working on research, I enjoy running, lifting weights, and listening to electronic music.
