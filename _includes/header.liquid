@@ -118,12 +118,11 @@
           {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
-            <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
-                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
-              </button>
+            <li class="nav-item">
+              <a class="nav-link" id="theme-toggle" onclick="toggleThemeSetting()">
+                <i class="fa-solid fa-moon" id="theme-toggle-icon-dark" style="display: none;"></i>
+                <i class="fa-solid fa-sun" id="theme-toggle-icon-light" style="display: none;"></i>
+              </a>
             </li>
           {% endif %}
         </ul>
