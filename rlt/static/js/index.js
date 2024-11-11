@@ -8,8 +8,8 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
     });
 
-    // Initialize Swiper
-    const kineticsCarousel = new Swiper('.kinetics-carousel', {
+    // Common Swiper configuration
+    const swiperConfig = {
         slidesPerView: 1,
         spaceBetween: 30,
         centeredSlides: true,
@@ -28,8 +28,8 @@ $(document).ready(function () {
         },
         on: {
             slideChange: function () {
-                // Pause all videos
-                const videos = document.querySelectorAll('.kinetics-carousel video');
+                // Pause all videos in this swiper
+                const videos = this.el.querySelectorAll('video');
                 videos.forEach(video => {
                     video.pause();
                 });
@@ -59,5 +59,11 @@ $(document).ready(function () {
                 }
             }
         }
-    });
+    };
+
+    // Initialize Kinetics carousel
+    const kineticsCarousel = new Swiper('.kinetics-carousel', swiperConfig);
+    
+    // Initialize SSv2 carousel
+    const ssv2Carousel = new Swiper('.ssv2-carousel', swiperConfig);
 });

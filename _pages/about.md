@@ -22,7 +22,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I'm a 4th-year PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) at Carnegie Mellon University, advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). I'm supported in part by an [NSF GRFP](https://www.nsfgrfp.org/) Fellowship.
+I'm a PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) at Carnegie Mellon University, advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). I'm supported in part by an [NSF GRFP](https://www.nsfgrfp.org/) Fellowship.
 
 I'm broadly interested in making video understanding faster and more efficient. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
 

@@ -377,18 +377,7 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content">
-      <p>
-        We present Run-Length Tokenization (RLT), a simple and efficient approach to speed up video transformers by removing redundant tokens from the input. Existing methods prune tokens progressively, incurring significant overhead and resulting in no speedup during training. Other approaches are content-agnostic: they reduce the number of tokens by a constant factor and thus require tuning for different datasets and videos for optimal performance. Our insight is that we can efficiently identify which patches are redundant before running the model. In contrast, RLT efficiently identifies and removes all tokens that are repeated over time before running the model, replacing them with a single token and a positional encoding to represent its new length. This approach is both content-aware, requiring no tuning for different datasets, and fast, incurring negligible overhead. RLT can increase the throughput of pre-trained transformers without any additional training, increasing throughput by 40% with only 0.1% drop in accuracy on action recognition. It also results in a large speedup in training, reducing the wall-clock time to fine-tune a video transformer by more than 40% while matching the baseline model performance. These benefits extend to video-language tasks, with RLT matching baseline performance on Epic Kitchens-100 multi-instance retrieval while reducing training time and throughput by 30%. On Kinetics-400, Something-Something-v2, and UCF101, RLT is able to reduce the total token count by 30%, and on longer videos or higher FPS settings, can reduce the token count by up to 80%.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="max-width: 1024px;">
+  <div class="container" style="max-width: 900px;">
     <h2 class="title is-3">Results</h2>
     <h3 class="title is-4" style="margin-top: 1.5rem; margin-bottom: 2rem;">Kinetics-400</h3>
     <div class="swiper kinetics-carousel">
@@ -455,6 +444,31 @@
             <source src="../assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
           </video>
           <div class="video-caption">Playing Ukulele</div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 900px; margin-top: 4rem;">
+    <h3 class="title is-4" style="margin-bottom: 2rem;">Something-Something v2</h3>
+    <div class="swiper ssv2-carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/ssv2/vis_ssv2_1.webm" type="video/webm">
+            <source src="../assets/videos/ssv2/vis_ssv2_1.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Pulling something from right to left</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/ssv2/vis_ssv2_2.webm" type="video/webm">
+            <source src="../assets/videos/ssv2/vis_ssv2_2.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Pushing something from left to right</div>
         </div>
       </div>
       <div class="swiper-pagination"></div>
