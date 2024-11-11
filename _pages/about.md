@@ -13,7 +13,7 @@ profile:
     <div class="social-icons">
       <a href="mailto:rchoudhu@andrew.cmu.edu" title="Email"><i class="fas fa-envelope"></i></a>
       <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=G01350MAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-      <a href="https://twitter.com/rchoudhury997" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://x.com/rchoudhury997" title="Twitter"><i class="fab fa-twitter"></i></a>
       <a href="https://www.linkedin.com/in/rohan-choudhury" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
 
