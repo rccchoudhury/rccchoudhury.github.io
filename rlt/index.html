@@ -9,14 +9,10 @@
   <link rel="stylesheet" href="./static/css/bootstrap.min.css">
   <link rel="stylesheet" href="./static/css/Highlight-Clean.css">
   <link rel="stylesheet" href="./static/css/styles.css">
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
 </head>
@@ -378,22 +374,27 @@
     </div>
   </div>
 
-  <div id="results-carousel" class="carousel">
-    <div class="item">
-      <video autoplay controls muted loop playsinline height="100%"> 
-        <source src="./assets/videos/teaser1.mp4" type="video/mp4">
-      </video>
+  <div class="swiper results-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <video autoplay controls muted loop playsinline width="100%"> 
+          <source src="/assets/videos/teaser1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <video autoplay controls muted loop playsinline width="100%"> 
+          <source src="/assets/videos/teaser2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <video autoplay controls muted loop playsinline width="100%"> 
+          <source src="/assets/videos/teaser2.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-    <div class="item">
-      <video autoplay controls muted loop playsinline height="100%"> 
-        <source src="./assets/videos/teaser2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="item">
-      <video autoplay controls muted loop playsinline height="100%"> 
-        <source src="./assets/videos/teaser2.mp4" type="video/mp4">
-      </video>
-    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
   <p style="margin-top: 5px; text-align: center; margin-bottom: -15px; max-width: 1448px; margin-left: auto; margin-right: auto;">
     <br>We visualize active patches in blue squares produced by our method.</p>
@@ -423,52 +424,52 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
             <video autoplay muted loop playsinline width="100%"> 
-              <source src="./assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
+              <source src="/assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -480,22 +481,27 @@
 
     <h3 class="title is-3">Something-Something dataset</h3>
     <div class="container" style="max-width: 1024px;">
-      <div id="results-carousel-ssv2" class="carousel results-carousel">
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ssv1.m4v" type="video/mp4">
-          </video>
+      <div class="swiper ssv2-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <video autoplay muted loop playsinline width="100%"> 
+              <source src="/assets/videos/ssv1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="swiper-slide">
+            <video autoplay muted loop playsinline width="100%"> 
+              <source src="/assets/videos/ssv2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="swiper-slide">
+            <video autoplay muted loop playsinline width="100%"> 
+              <source src="/assets/videos/ssv3.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ssv1.m4v" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ssv1.m4v" type="video/mp4">
-          </video>
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
   </div>
