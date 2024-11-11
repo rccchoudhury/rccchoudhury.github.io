@@ -26,7 +26,8 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .highlighted-link {
     display: inline-flex;
@@ -257,12 +258,20 @@
       background-position: 0% 50%;
     }
   }
+  .results-carousel {
+    margin-top: 10px;
+  }
+  .section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  br {
+    display: none;
+  }
 </style>
 <body>
 
 <section class="section is-light" id="results">
-  <br>
-  <br>
   <div class="columns is-centered">
     <div class="column has-text-centered">
       <div class="title-container">
@@ -337,59 +346,33 @@
     </div>
   </div>
 
-  <br>
-  <br>
-  <br>
-
-
-</section>
-
-<section class="hero is-light ">
-  <div class="hero-body">
-    <div class="container" max-width="1024px">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video autoplay controls muted loop playsinline height="100%"> 
-            <source src="./assets/videos/teaser1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline height="100%"> 
-            <source src="./assets/videos/teaser2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline height="100%"> 
-            <source src="./assets/videos/teaser2.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
+  <div id="results-carousel" class="carousel results-carousel">
+    <div class="item">
+      <video autoplay controls muted loop playsinline height="100%"> 
+        <source src="./assets/videos/teaser1.mp4" type="video/mp4">
+      </video>
     </div>
+    <div class="item">
+      <video autoplay controls muted loop playsinline height="100%"> 
+        <source src="./assets/videos/teaser2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="item">
+      <video autoplay controls muted loop playsinline height="100%"> 
+        <source src="./assets/videos/teaser2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
   <p style="margin-top: 5px; text-align: center; margin-bottom: -15px; max-width: 1448px; margin-left: auto; margin-right: auto;">
     <br>We visualize active patches in blue squares produced by our method.</p>
-  </div>
 </section>
-
-<section class="hero">
-  <br><br><br>
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content">
-      <p>
-        We present Run-Length Tokenization (RLT), a simple and efficient approach to speed up video transformers by removing redundant tokens from the input. Existing methods prune tokens progressively, incurring significant overhead and resulting in no speedup during training. Other approaches are content-agnostic: they reduce the number of tokens by a constant factor and thus require tuning for different datasets and videos for optimal performance. Our insight is that we can efficiently identify which patches are redundant before running the model. In contrast, RLT efficiently identifies and removes all tokens that are repeated over time before running the model, replacing them with a single token and a positional encoding to represent its new length. This approach is both content-aware, requiring no tuning for different datasets, and fast, incurring negligible overhead. RLT can increase the throughput of pre-trained transformers without any additional training, increasing throughput by 40% with only 0.1% drop in accuracy on action recognition. It also results in a large speedup in training, reducing the wall-clock time to fine-tune a video transformer by more than 40% while matching the baseline model performance. These benefits extend to video-language tasks, with RLT matching baseline performance on Epic Kitchens-100 multi-instance retrieval while reducing training time and throughput by 30%. On Kinetics-400, Something-Something-v2, and UCF101, RLT is able to reduce the total token count by 30%, and on longer videos or higher FPS settings, can reduce the token count by up to 80%.
-      </div>
-    
-    
-  </div>
-  <br><br><br>
-</section>
-
 
 <section class="hero">
   <div class="hero-body">
     <h2 class="title is-3">Sample Results</h2>
     <p style="margin-top: 5px; text-align: center; margin-bottom: 5px; max-width: 1448px; margin-left: auto; margin-right: auto;">
     <br>We present some sample video results on a variety of video benchmarks. </p>
+    
     <h3 class="title is-3">Kinetics</h3>
     <div class="container" max-width="1024px">
       <div id="results-carousel" class="carousel results-carousel">
@@ -413,7 +396,7 @@
 
     <h3 class="title is-3">Something-Something dataset</h3>
     <div class="container" max-width="1024px">
-      <div id="results-carousel" class="carousel results-carousel">
+      <div id="results-carousel-ssv2" class="carousel results-carousel">
         <div class="item">
           <video autoplay controls muted loop playsinline width="100%"> 
             <source src="./assets/videos/ssv1.m4v" type="video/mp4">
@@ -431,362 +414,20 @@
         </div>
       </div>
     </div>
-
-    <h3 class="title is-3">UCF 101 dataset</h3>
-    <div class="container" max-width="1024px">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ucf101_1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ucf101_2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/ucf101_3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="title is-3">Breakfast dataset</h3>
-    <div class="container" max-width="1024px">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/breakfast1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/breakfast2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline width="100%"> 
-            <source src="./assets/videos/breakfast3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-
-
-  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px; max-width: 1448px; margin-left: auto; margin-right: auto;">
   </div>
 </section>
-<br>
-<!-- 
-<section class="hero is-light is-small">
-  <div class="container">
-    <br>
-    <h2 class="title is-3">Sample Results</h2>
-    We present some sample video results on a variety of video benchmarks. Click the thumbnails to play the videos.
-    <div class="video-grid">
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic" data-slide-to="2"></li>
 
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="kinetics1" autoplay muted playsinline   width="100%"> 
-                <source src="./assets/videos/kinetics2.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="kinetics2" autoplay muted playsinline   width="100%"> 
-                <source src="./assets/videos/kinetics1.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="kinetics3" autoplay muted playsinline   width="100%"> 
-                <source src="./assets/videos/kinetics3.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>RLT Tokenization on the Kinetics dataset.</p>
+<section class="hero">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content">
+      <p>
+        We present Run-Length Tokenization (RLT), a simple and efficient approach to speed up video transformers by removing redundant tokens from the input. Existing methods prune tokens progressively, incurring significant overhead and resulting in no speedup during training. Other approaches are content-agnostic: they reduce the number of tokens by a constant factor and thus require tuning for different datasets and videos for optimal performance. Our insight is that we can efficiently identify which patches are redundant before running the model. In contrast, RLT efficiently identifies and removes all tokens that are repeated over time before running the model, replacing them with a single token and a positional encoding to represent its new length. This approach is both content-aware, requiring no tuning for different datasets, and fast, incurring negligible overhead. RLT can increase the throughput of pre-trained transformers without any additional training, increasing throughput by 40% with only 0.1% drop in accuracy on action recognition. It also results in a large speedup in training, reducing the wall-clock time to fine-tune a video transformer by more than 40% while matching the baseline model performance. These benefits extend to video-language tasks, with RLT matching baseline performance on Epic Kitchens-100 multi-instance retrieval while reducing training time and throughput by 30%. On Kinetics-400, Something-Something-v2, and UCF101, RLT is able to reduce the total token count by 30%, and on longer videos or higher FPS settings, can reduce the token count by up to 80%.
       </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic2" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic2" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic2" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic2" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="kinetics1_gt" autoplay muted playsinline controls width="100%"> 
-                <source src="./assets/videos/kinetics2_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="kinetics2_gt" autoplay muted playsinline controls width="100%"> 
-                <source src="./assets/videos/kinetics1_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="kinetics3_gt" autoplay muted playsinline controls width="100%"> 
-                <source src="./assets/videos/kinetics3_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic2" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic2" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>Standard Tokenization on the Kinetics dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic3" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic3" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic3" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic3" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="ssv1" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv1.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ssv2" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv2.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ssv3" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv3.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic3" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic3" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>RLT Tokenization on the Something-Something dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic4" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic4" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic4" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic4" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="ssv1_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv1_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ssv2_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv2_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ssv3_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ssv3_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic4" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic4" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>Standard Tokenization on  the Something-Something dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic5" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic5" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic5" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic5" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="ucf1" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_1.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ucf2" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_2.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ucf3" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_3.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic5" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic5" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>RLT Tokenization on the UCF101 dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic6" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic6" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic6" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic6" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="ucf101_1_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_1_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ucf101_2_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_2_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="ucf101_3_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/ucf101_3_gt.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic6" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic6" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>Standard Tokenization on  the UCF101 dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic7" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic7" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic7" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic7" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="breakfast1" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast1.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="breakfast2" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast2.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="breakfast3" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast3.mp4" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic7" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic7" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>RLT Tokenization on the Breakfast dataset.</p>
-      </div>
-
-      <div class="video-cell">
-        <div id="carouselExampleControls_logic8" class="carousel slide" data-ride="false" data-interval="false" data-wrap="true">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleControls_logic8" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleControls_logic8" data-slide-to="1"></li>
-            <li data-target="#carouselExampleControls_logic8" data-slide-to="2"></li>
-
-          </ol>
-          <div class="carousel-inner" data-wrap="false">
-            <div class="carousel-item active">
-              <video id="breakfast1_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast1_gt.m4v" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="breakfast2_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast2_gt.m4v" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-            <div class="carousel-item" data-wrap="false">
-              <video id="breakfast3_gt" muted playsinline controls width="100%"> 
-                <source src="./assets/videos/breakfast3_gt.m4v" fetchpriority="high" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls_logic8" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls_logic8" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <p>Standard Tokenization on  the Breakfast dataset.</p>
-      </div>
-
-    </div>
-
-
-    <br>
+    
+    
   </div>
-</section> -->
+  <br><br><br>
+</section>
 </body>
 </html>
