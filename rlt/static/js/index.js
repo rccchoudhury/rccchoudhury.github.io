@@ -8,13 +8,56 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
     });
 
-    // Ensure video autoplay works
-    const video = document.querySelector('video');
-    if (video) {
-        video.play().catch(function(error) {
-            console.log("Video autoplay failed:", error);
-            // Add a play button if autoplay fails
-            video.setAttribute('controls', 'controls');
-        });
-    }
+    // Initialize Swiper
+    const kineticsCarousel = new Swiper('.kinetics-carousel', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        on: {
+            slideChange: function () {
+                // Pause all videos
+                const videos = document.querySelectorAll('.kinetics-carousel video');
+                videos.forEach(video => {
+                    video.pause();
+                });
+
+                // Play the video in the active slide
+                const activeSlide = this.slides[this.activeIndex];
+                if (activeSlide) {
+                    const video = activeSlide.querySelector('video');
+                    if (video) {
+                        video.currentTime = 0;
+                        video.play().catch(function(error) {
+                            console.log("Video play failed:", error);
+                        });
+                    }
+                }
+            },
+            init: function() {
+                // Play the first video on init
+                const activeSlide = this.slides[this.activeIndex];
+                if (activeSlide) {
+                    const video = activeSlide.querySelector('video');
+                    if (video) {
+                        video.play().catch(function(error) {
+                            console.log("Video play failed:", error);
+                        });
+                    }
+                }
+            }
+        }
+    });
 });
