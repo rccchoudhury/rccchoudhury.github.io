@@ -377,17 +377,17 @@
   <div class="swiper results-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline width="100%"> 
+        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
           <source src="/assets/videos/teaser1.mp4" type="video/mp4">
         </video>
       </div>
       <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline width="100%"> 
+        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
           <source src="/assets/videos/teaser2.mp4" type="video/mp4">
         </video>
       </div>
       <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline width="100%"> 
+        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
           <source src="/assets/videos/teaser2.mp4" type="video/mp4">
         </video>
       </div>
@@ -423,53 +423,53 @@
       <div class="swiper kinetics-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -479,23 +479,46 @@
       </div>
     </div>
 
+    <style>
+      .swiper {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 400px;
+      }
+
+      .swiper-slide video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #000;
+      }
+    </style>
+
     <h3 class="title is-3">Something-Something dataset</h3>
     <div class="container" style="max-width: 1024px;">
       <div class="swiper ssv2-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/ssv1.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/ssv1.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/ssv2.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/ssv2.mp4" type="video/mp4">
             </video>
           </div>
           <div class="swiper-slide">
-            <video autoplay muted loop playsinline width="100%"> 
-              <source src="/assets/videos/ssv3.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
+              <source src="../assets/videos/ssv3.mp4" type="video/mp4">
             </video>
           </div>
         </div>
