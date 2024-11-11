@@ -8,65 +8,13 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
     });
 
-    // Function to handle video playback
-    function handleVideoPlayback(swiper) {
-        // Pause all videos
-        const allVideos = document.querySelectorAll('.swiper video');
-        allVideos.forEach(video => {
-            video.pause();
-            video.currentTime = 0;
+    // Ensure video autoplay works
+    const video = document.querySelector('video');
+    if (video) {
+        video.play().catch(function(error) {
+            console.log("Video autoplay failed:", error);
+            // Add a play button if autoplay fails
+            video.setAttribute('controls', 'controls');
         });
-
-        // Play the video in the active slide
-        const activeSlide = swiper.slides[swiper.activeIndex];
-        if (activeSlide) {
-            const video = activeSlide.querySelector('video');
-            if (video) {
-                video.play().catch(function(error) {
-                    console.log("Video play failed:", error);
-                });
-            }
-        }
     }
-
-    // Common Swiper configuration
-    const swiperConfig = {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: true,
-        loop: true,
-        autoHeight: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        on: {
-            init: function() {
-                handleVideoPlayback(this);
-            },
-            slideChange: function() {
-                handleVideoPlayback(this);
-            }
-        }
-    };
-
-    // Initialize all swipers
-    const kineticsSwiper = new Swiper('.kinetics-swiper', swiperConfig);
-    const ssv2Swiper = new Swiper('.ssv2-swiper', swiperConfig);
-    const resultsSwiper = new Swiper('.results-swiper', swiperConfig);
-
-    // Add click handlers for videos
-    document.querySelectorAll('.swiper video').forEach(video => {
-        video.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    });
 });
