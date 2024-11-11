@@ -374,151 +374,156 @@
       </div>
     </div>
   </div>
+</section>
 
-  <section class="hero section-spacing">
-    <div class="hero-body">
-      <h2 class="title is-3">Abstract</h2>
-      <div class="content">
-        <p>
-          We present Run-Length Tokenization (RLT), a simple and efficient approach to speed up video transformers by removing redundant tokens from the input. Existing methods prune tokens progressively, incurring significant overhead and resulting in no speedup during training. Other approaches are content-agnostic: they reduce the number of tokens by a constant factor and thus require tuning for different datasets and videos for optimal performance. Our insight is that we can efficiently identify which patches are redundant before running the model. In contrast, RLT efficiently identifies and removes all tokens that are repeated over time before running the model, replacing them with a single token and a positional encoding to represent its new length. This approach is both content-aware, requiring no tuning for different datasets, and fast, incurring negligible overhead. RLT can increase the throughput of pre-trained transformers without any additional training, increasing throughput by 40% with only 0.1% drop in accuracy on action recognition. It also results in a large speedup in training, reducing the wall-clock time to fine-tune a video transformer by more than 40% while matching the baseline model performance. These benefits extend to video-language tasks, with RLT matching baseline performance on Epic Kitchens-100 multi-instance retrieval while reducing training time and throughput by 30%. On Kinetics-400, Something-Something-v2, and UCF101, RLT is able to reduce the total token count by 30%, and on longer videos or higher FPS settings, can reduce the token count by up to 80%.
-        </p>
-      </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content">
+      <p>
+        We present Run-Length Tokenization (RLT), a simple and efficient approach to speed up video transformers by removing redundant tokens from the input. Existing methods prune tokens progressively, incurring significant overhead and resulting in no speedup during training. Other approaches are content-agnostic: they reduce the number of tokens by a constant factor and thus require tuning for different datasets and videos for optimal performance. Our insight is that we can efficiently identify which patches are redundant before running the model. In contrast, RLT efficiently identifies and removes all tokens that are repeated over time before running the model, replacing them with a single token and a positional encoding to represent its new length. This approach is both content-aware, requiring no tuning for different datasets, and fast, incurring negligible overhead. RLT can increase the throughput of pre-trained transformers without any additional training, increasing throughput by 40% with only 0.1% drop in accuracy on action recognition. It also results in a large speedup in training, reducing the wall-clock time to fine-tune a video transformer by more than 40% while matching the baseline model performance. These benefits extend to video-language tasks, with RLT matching baseline performance on Epic Kitchens-100 multi-instance retrieval while reducing training time and throughput by 30%. On Kinetics-400, Something-Something-v2, and UCF101, RLT is able to reduce the total token count by 30%, and on longer videos or higher FPS settings, can reduce the token count by up to 80%.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="hero section-spacing">
-    <div class="hero-body">
-      <h2 class="title is-3">More Results</h2>
-      <div class="container" style="max-width: 1024px;">
-        <div class="swiper kinetics-carousel">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_cartwheel.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Cartwheel</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_clarinet.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Playing Clarinet</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_cleanjerk.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Clean and Jerk</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_cricket.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Cricket</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_egghunting.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Egg Hunting</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_eyebrow.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Raising Eyebrows</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_fingersnap.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Finger Snapping</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_jogging.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Jogging</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_shed.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Building Shed</div>
-            </div>
-            <div class="swiper-slide">
-              <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-                <source src="../assets/videos/kinetics/vis_ukelele.webm" type="video/webm">
-                <source src="../assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
-              </video>
-              <div class="video-caption">Playing Ukulele</div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+<section class="section">
+  <div class="container" style="max-width: 1024px;">
+    <h2 class="title is-3">Results</h2>
+    <div class="swiper kinetics-carousel">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_cartwheel.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Cartwheel</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_clarinet.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Playing Clarinet</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_cleanjerk.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Clean and Jerk</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_cricket.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Cricket</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_egghunting.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Egg Hunting</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_eyebrow.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Raising Eyebrows</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_fingersnap.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Finger Snapping</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_jogging.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Jogging</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_shed.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Building Shed</div>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+            <source src="../assets/videos/kinetics/vis_ukelele.webm" type="video/webm">
+            <source src="../assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">Playing Ukulele</div>
         </div>
       </div>
-
-      <style>
-        .swiper {
-          width: 100%;
-          padding-top: 20px;
-          padding-bottom: 50px;
-        }
-
-        .swiper-slide {
-          background-position: center;
-          background-size: cover;
-          width: 100%;
-          height: 400px;
-        }
-
-        .swiper-slide video {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          background: #000;
-        }
-
-        .video-caption {
-          text-align: center;
-          margin-top: 10px;
-          color: #333;
-          font-size: 1.1em;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-          color: #fff;
-          background: rgba(0,0,0,0.5);
-          padding: 30px 20px;
-          border-radius: 5px;
-        }
-
-        .swiper-pagination-bullet {
-          background: #fff;
-          opacity: 0.5;
-        }
-
-        .swiper-pagination-bullet-active {
-          opacity: 1;
-          background: #007aff;
-        }
-      </style>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-  </section>
+  </div>
 
+  <style>
+    .swiper {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 80px;  
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 400px;
+    }
+
+    .swiper-slide video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .video-caption {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 20px;  
+      color: #333;
+      font-size: 1.1em;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 30px 20px;
+      border-radius: 5px;
+    }
+
+    .swiper-pagination {
+      bottom: 30px !important;  
+    }
+
+    .swiper-pagination-bullet {
+      background: #333;
+      opacity: 0.5;
+      width: 10px;  
+      height: 10px;
+      margin: 0 6px;  
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #007aff;
+    }
+  </style>
 </section>
 
 </body>
