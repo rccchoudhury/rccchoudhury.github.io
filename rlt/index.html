@@ -362,42 +362,50 @@
       </div>
 
       <div class="publication-links">
-        <a href="https://arxiv.org/abs/2411.05222" class="highlighted-link" style="background: #000000;">
-          <i class="fas fa-file-alt icon"></i>
+        <a class="highlighted-link" style="background-color: #4CAF50;" href="https://arxiv.org/abs/2411.05222">
+          <i class="fas fa-file-pdf"></i>
           Paper
         </a>
-        <a href="https://github.com/rccchoudhury/rlt" class="highlighted-link" style="background: #000000;">
-          <i class="fas fa-code icon"></i>
+        <a class="highlighted-link" style="background-color: #FF5722;" href="https://github.com/rccchoudhury/rlt">
+          <i class="fab fa-github"></i>
           Code
         </a>
       </div>
     </div>
   </div>
 
-  <div class="swiper results-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
-          <source src="/assets/videos/teaser1.mp4" type="video/mp4">
-        </video>
+  <section class="hero section-spacing">
+    <div class="hero-body">
+      <h2 class="title is-3">Sample Results</h2>
+      <p style="text-align: center; margin-bottom: 1.5rem;">
+        We present some sample video results on a variety of video benchmarks.
+      </p>
+    
+      <h3 class="title is-3">Kinetics</h3>
+      <div class="container" style="max-width: 1024px;">
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+          <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            controls
+            style="width: 100%; max-height: 500px; object-fit: contain; background: #000;"
+          >
+            <source src="./assets/videos/kinetics/vis_cartwheel.webm" type="video/webm">
+            <source src="./assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
-      <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
-          <source src="/assets/videos/teaser2.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="swiper-slide">
-        <video autoplay controls muted loop playsinline style="width: 100%; height: 100%; object-fit: contain;"> 
-          <source src="/assets/videos/teaser2.mp4" type="video/mp4">
-        </video>
-      </div>
+
+      <style>
+        .container {
+          margin-bottom: 2rem;
+        }
+      </style>
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-  <p style="margin-top: 5px; text-align: center; margin-bottom: -15px; max-width: 1448px; margin-left: auto; margin-right: auto;">
-    <br>We visualize active patches in blue squares produced by our method.</p>
+  </section>
 </section>
 
 <section class="hero" style="margin-top: 2rem;">
@@ -411,36 +419,5 @@
   </div>
 </section>
 
-<section class="hero section-spacing">
-  <div class="hero-body">
-    <h2 class="title is-3">Sample Results</h2>
-    <p style="text-align: center; margin-bottom: 1.5rem;">
-      We present some sample video results on a variety of video benchmarks.
-    </p>
-    
-    <h3 class="title is-3">Kinetics</h3>
-    <div class="container" style="max-width: 1024px;">
-      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-        <video 
-          autoplay 
-          muted 
-          loop 
-          playsinline 
-          controls
-          style="width: 100%; max-height: 500px; object-fit: contain; background: #000;"
-        >
-          <source src="https://rccchoudhury.github.io/assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-
-    <style>
-      .container {
-        margin-bottom: 2rem;
-      }
-    </style>
-  </div>
-</section>
 </body>
 </html>
