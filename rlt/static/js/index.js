@@ -8,12 +8,34 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
     });
 
+    // Function to handle video playback
+    function handleVideoPlayback(swiper) {
+        // Pause all videos
+        const allVideos = document.querySelectorAll('.swiper video');
+        allVideos.forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        // Play the video in the active slide
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        if (activeSlide) {
+            const video = activeSlide.querySelector('video');
+            if (video) {
+                video.play().catch(function(error) {
+                    console.log("Video play failed:", error);
+                });
+            }
+        }
+    }
+
     // Common Swiper configuration
     const swiperConfig = {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 30,
         centeredSlides: true,
         loop: true,
+        autoHeight: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -23,31 +45,11 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev',
         },
         on: {
-            slideChange: function () {
-                // Pause all videos in this swiper
-                const videos = this.el.querySelectorAll('.swiper-slide video');
-                videos.forEach(video => {
-                    video.pause();
-                });
-                
-                // Play the video in the active slide
-                const activeSlide = this.slides[this.activeIndex];
-                if (activeSlide) {
-                    const video = activeSlide.querySelector('video');
-                    if (video) {
-                        video.play();
-                    }
-                }
-            },
             init: function() {
-                // Play the first video on init
-                const activeSlide = this.slides[this.activeIndex];
-                if (activeSlide) {
-                    const video = activeSlide.querySelector('video');
-                    if (video) {
-                        video.play();
-                    }
-                }
+                handleVideoPlayback(this);
+            },
+            slideChange: function() {
+                handleVideoPlayback(this);
             }
         }
     };
@@ -55,8 +57,16 @@ $(document).ready(function () {
     // Initialize all swipers
     const kineticsSwiper = new Swiper('.kinetics-swiper', swiperConfig);
     const ssv2Swiper = new Swiper('.ssv2-swiper', swiperConfig);
-    const resultsSwiper = new Swiper('.results-swiper', {
-        ...swiperConfig,
-        slidesPerView: 1, // Show only one video at a time for the results section
+    const resultsSwiper = new Swiper('.results-swiper', swiperConfig);
+
+    // Add click handlers for videos
+    document.querySelectorAll('.swiper video').forEach(video => {
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
     });
 });
