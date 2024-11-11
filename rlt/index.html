@@ -420,126 +420,25 @@
     
     <h3 class="title is-3">Kinetics</h3>
     <div class="container" style="max-width: 1024px;">
-      <div class="swiper kinetics-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_clarinet.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_cleanjerk.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_cricket.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_egghunting.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_eyebrow.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_fingersnap.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_jogging.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_shed.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/kinetics/vis_ukelele.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <video 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          controls
+          style="width: 100%; max-height: 500px; object-fit: contain; background: #000;"
+        >
+          <source src="/assets/videos/kinetics/vis_cartwheel.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
 
     <style>
-      .swiper {
-        width: 100%;
-        padding-top: 20px;
-        padding-bottom: 50px;
-      }
-
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 100%;
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .swiper-slide video {
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        background: #000;
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #fff;
-        background: rgba(0,0,0,0.5);
-        padding: 30px 20px;
-        border-radius: 5px;
+      .container {
+        margin-bottom: 2rem;
       }
     </style>
-
-    <!-- Temporarily commenting out Something-Something dataset carousel
-    <h3 class="title is-3">Something-Something dataset</h3>
-    <div class="container" style="max-width: 1024px;">
-      <div class="swiper ssv2-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/ssv1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/ssv2.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="swiper-slide">
-            <video controls muted playsinline style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> 
-              <source src="/assets/videos/ssv3.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </div>
-    -->
   </div>
 </section>
 </body>
