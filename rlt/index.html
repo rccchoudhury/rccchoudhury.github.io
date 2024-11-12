@@ -218,7 +218,7 @@
   /* Change this existing style */
 .section.is-light {
   background: linear-gradient(135deg, #e0e6fa, #e8f2f5, #dbc4ff);
-  padding: 20px 0; /* Reduced from 60px to 20px */
+  padding: 20px 0 10px 0; /* Reduced padding, especially at the bottom */
 }
 
   .section.is-light .container {
@@ -348,6 +348,14 @@
 
   .swiper-pagination {
     bottom: 5px !important;
+  }
+
+  .swiper {
+    margin-bottom: 1rem !important; /* Reduce space after carousel */
+  }
+
+  .content.has-text-centered {
+    margin-bottom: 1rem; /* Reduce space after the text content */
   }
 </style>
 <body>
