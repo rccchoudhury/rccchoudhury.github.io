@@ -64,12 +64,57 @@ $(document).ready(function () {
     // Initialize SSv2 carousel
     const ssv2Carousel = new Swiper('.ssv2-carousel', swiperConfig);
 
-    // Initialize teaser carousel
+    // Initialize teaser carousel with specific settings
     const teaserCarousel = new Swiper('.teaser-carousel', {
-        ...swiperConfig,
-        effect: 'fade',  // Add fade transition for smoother video switching
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: false,  // Explicitly disable autoplay
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
         fadeEffect: {
             crossFade: true
+        },
+        on: {
+            slideChange: function () {
+                // Pause all videos in this swiper
+                const videos = this.el.querySelectorAll('video');
+                videos.forEach(video => {
+                    video.pause();
+                });
+
+                // Play the video in the active slide
+                const activeSlide = this.slides[this.activeIndex];
+                if (activeSlide) {
+                    const video = activeSlide.querySelector('video');
+                    if (video) {
+                        video.currentTime = 0;
+                        video.play().catch(function(error) {
+                            console.log("Video play failed:", error);
+                        });
+                    }
+                }
+            },
+            init: function() {
+                // Play the first video on init
+                const activeSlide = this.slides[this.activeIndex];
+                if (activeSlide) {
+                    const video = activeSlide.querySelector('video');
+                    if (video) {
+                        video.play().catch(function(error) {
+                            console.log("Video play failed:", error);
+                        });
+                    }
+                }
+            }
         }
     });
 });
