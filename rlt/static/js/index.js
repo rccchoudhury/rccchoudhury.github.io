@@ -66,4 +66,13 @@ $(document).ready(function () {
     
     // Initialize SSv2 carousel
     const ssv2Carousel = new Swiper('.ssv2-carousel', swiperConfig);
+
+    // Initialize teaser carousel
+    const teaserCarousel = new Swiper('.teaser-carousel', {
+        ...swiperConfig,
+        effect: 'fade',  // Add fade transition for smoother video switching
+        fadeEffect: {
+            crossFade: true
+        }
+    });
 });
