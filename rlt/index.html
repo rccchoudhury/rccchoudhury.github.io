@@ -215,10 +215,11 @@
     margin-bottom: 5px;
   }
 
-  .section.is-light {
-    background: linear-gradient(135deg, #e0e6fa, #e8f2f5, #dbc4ff);
-    padding: 60px 0;
-  }
+  /* Change this existing style */
+.section.is-light {
+  background: linear-gradient(135deg, #e0e6fa, #e8f2f5, #dbc4ff);
+  padding: 20px 0; /* Reduced from 60px to 20px */
+}
 
   .section.is-light .container {
     max-width: 1440px !important;
@@ -397,7 +398,7 @@
           </a>
         </div>
 
-        <div style="margin-top: 2rem; margin-bottom: -2rem;">
+        <div style="margin-top: 2rem; margin-bottom: ;">
           <div class="container" style="max-width: 550px;">
             <div class="swiper teaser-carousel">
               <div class="swiper-wrapper">
@@ -420,10 +421,17 @@
             </div>
 
             <style>
+              .teaser-carousel .swiper {
+                padding-top: 0;
+                padding-bottom: 0;
+              }
+              
               .teaser-carousel .swiper-slide {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                width: auto;
+                height: auto;
               }
 
               .teaser-carousel video {
@@ -435,9 +443,9 @@
               .teaser-carousel .swiper-button-prev {
                 color: #fff;
                 background: rgba(0,0,0,0.5);
-                padding: 30px 20px;
+                padding: 10px 10px; /* Reduced from 30px 20px */
                 border-radius: 5px;
-                transform: scale(0.8);  /* Make navigation arrows slightly smaller */
+                transform: scale(0.8);
               }
 
               .teaser-carousel .swiper-pagination {
