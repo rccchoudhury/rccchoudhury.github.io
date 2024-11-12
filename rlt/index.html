@@ -481,6 +481,8 @@
   </div>
 </section>
 
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Abstract</h2>
@@ -492,24 +494,38 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 2rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Method Overview</h2>
-    <div class="content">
-      <p style="text-align: justify;">
-      </p>
-      <div style="text-align: center; margin: 2rem 0;">
-        <img src="../assets/rlt_overview.png" alt="RLT Method Overview" style="max-width: 100%; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
-    <p class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
+    <h2 class="title is-3">Method Overview</h2>
+    
+    <!-- RLT Overview Figure -->
+    <div class="content has-text-centered">
+      <img src="rlt_overview.png" alt="RLT Overview" style="width: 100%; max-width: 800px; margin-bottom: 2rem;">
+    </div>
+
+    <!-- RLT Description -->
+    <div class="content">
+      <p>
+        RLT works by first comparing the input frames to find redundant patches. We deem two patches to be redundant if the the mean L1 norm of their pixel difference
+        is less than a input threshold. For every patch in each frame, we compare with the following frame, and remove the patches that are similar enough. 
+        Once those are removed, we compute the "run-length", or number of consecutive patches in a spatial location that were removed. This represents the 
+        'duration' of the token, and is expressed to the transformer via the length embedding. We display this in the below plot through a toy example:
+      </p>
+    </div>
+
+    <!-- Toy Example Figure -->
+    <div class="content has-text-centered">
+      <img src="rlt_toy_example.png" alt="RLT Toy Example" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+    </div>
+
+    <div class="content">
+      <p>
+       An added benefit of RLT is that it does not require running the model to determine the new length of the input. This enables us to 
+       avoid having to pad examples, and can use block-diagonal attention masks to efficiently run attention on large batches of examples with 
+       no overhead. This enables us to make the most of the token reduction, while other methods typically show lower theoretical GFLOPS but no
+       wall-clock speedup in pracice.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -589,7 +605,7 @@
     </div>
   </div>
 
-  <div class="container" style="max-width: 900px; margin-top: 4rem;">
+  <div class="container" style="max-width: 900px; margin-top: 2rem;">
     <h3 class="title is-4" style="margin-bottom: 2rem;">Something-Something v2</h3>
     <div class="swiper ssv2-carousel">
       <div class="swiper-wrapper">
