@@ -215,10 +215,11 @@
     margin-bottom: 5px;
   }
 
-  .section.is-light {
-    background: linear-gradient(135deg, #e0e6fa, #e8f2f5, #dbc4ff);
-    padding: 60px 0;
-  }
+  /* Change this existing style */
+.section.is-light {
+  background: linear-gradient(135deg, #e0e6fa, #e8f2f5, #dbc4ff);
+  padding: 20px 0; /* Reduced from 60px to 20px */
+}
 
   .section.is-light .container {
     max-width: 1440px !important;
@@ -325,108 +326,140 @@
     height: 100%;
     object-fit: cover;
   }
+  /* Adjust pagination dots spacing */
+  .swiper-pagination {
+    position: relative;
+    bottom: -10px !important;
+    margin-bottom: 0;
+  }
+  
+  .swiper-horizontal>.swiper-pagination-bullets, 
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    padding: 30px 20px;
+    border-radius: 5px;
+  }
+
+  .swiper-pagination {
+    bottom: 5px !important;
+  }
 </style>
 <body>
 
 <section class="section is-light" id="results">
   <div class="columns is-centered">
-    <div class="column has-text-centered">
-      <div class="content has-text-centered">
-        <h1 class="main-title">Don't Look Twice:</h1>
-        <br>
-        <h1 class="main-title">Faster Video Transformers with Run-Length Tokenization</h1>
-      </div>
-      
-      <div class="is-size-5 publication-authors" style="text-align: center;">
-        <span class="author-block">
-          <a href="https://rccchoudhury.github.io">Rohan Choudhury</a><sup>1</sup>,</span>
-        <span class="author-block">
-          <a href="https://www.linkedin.com/in/guangleizhu0818/">Guanglei Zhu</a><sup>*1</sup>,</span>
-        <span class="author-block">
-          <a href="https://www.ri.cmu.edu/ri-people/sihan-liu-2/">Sihan Liu</a><sup>*1</sup>,
-        </span>
-        <span class="author-block">
-          <a href="https://scholar.google.com/citations?user=AFaeUrYAAAAJ&hl=en">Koichiro Niinuma</a><sup>2</sup>,
-        </span>
-        <span class="author-block">
-          <a href="https://kriskitani.github.io">Kris M. Kitani</a><sup>1</sup>,
-        </span>
-        <span class="author-block">
-          <a href="https://www.laszlojeni.com">László A. Jeni</a><sup>1</sup>
-        </span>
-      </div>
+    <div class="column is-10">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="content has-text-centered">
+          <h1 class="main-title">Don't Look Twice:</h1>
+          <br>
+          <h1 class="main-title">Faster Video Transformers with Run-Length Tokenization</h1>
+        </div>
+        
+        <div class="is-size-5 publication-authors" style="text-align: center;">
+          <span class="author-block">
+            <a href="https://rccchoudhury.github.io">Rohan Choudhury</a><sup>1</sup>,</span>
+          <span class="author-block">
+            <a href="https://www.linkedin.com/in/guangleizhu0818/">Guanglei Zhu</a><sup>*1</sup>,</span>
+          <span class="author-block">
+            <a href="https://www.ri.cmu.edu/ri-people/sihan-liu-2/">Sihan Liu</a><sup>*1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://scholar.google.com/citations?user=AFaeUrYAAAAJ&hl=en">Koichiro Niinuma</a><sup>2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://kriskitani.github.io">Kris M. Kitani</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://www.laszlojeni.com">László A. Jeni</a><sup>1</sup>
+          </span>
+        </div>
 
-      <div class="is-size-5 publication-authors" style="text-align: center;">
-        <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
-        <span class="author-block"><sup>2</sup>Fujitsu Research</span>
-        <span class="author-block"><sup>*</sup>Equal Contribution</span>
-      </div>
+        <div class="is-size-5 publication-authors" style="text-align: center;">
+          <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
+          <span class="author-block"><sup>2</sup>Fujitsu Research</span>
+          <span class="author-block"><sup>*</sup>Equal Contribution</span>
+        </div>
 
-      <div class="publication-links">
-        <a class="highlighted-link" style="background-color: #4CAF50;" href="https://arxiv.org/abs/2411.05222">
-          <i class="fas fa-file-pdf"></i>
-          Paper
-        </a>
-        <a class="highlighted-link" style="background-color: #FF5722;" href="https://github.com/rccchoudhury/rlt">
-          <i class="fab fa-github"></i>
-          Code
-        </a>
-      </div>
+        <div class="publication-links">
+          <a class="highlighted-link" style="background-color: #4CAF50;" href="https://arxiv.org/abs/2411.05222">
+            <i class="fas fa-file-pdf"></i>
+            Paper
+          </a>
+          <a class="highlighted-link" style="background-color: #FF5722;" href="https://github.com/rccchoudhury/rlt">
+            <i class="fab fa-github"></i>
+            Code
+          </a>
+        </div>
 
-      <div style="margin-top: 2rem; margin-bottom: 1rem;">
-        <div class="container" style="max-width: 480px;">
-          <div class="swiper teaser-carousel">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" style="height: auto;">
-                <video autoplay muted loop playsinline style="width: 100%; max-height: 270px; display: block; object-fit: contain;">
-                  <source src="/assets/videos/vis_one_piece.webm" type="video/webm">
-                  <source src="/assets/videos/vis_one_piece.mp4" type="video/mp4">
-                </video>
+        <div style="margin-top: 2rem; margin-bottom: ;">
+          <div class="container" style="max-width: 550px;">
+            <div class="swiper teaser-carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="height: auto;">
+                  <video autoplay muted loop playsinline style="max-width: 540px; max-height: 320px; display: block; object-fit: contain;">
+                    <source src="/assets/videos/vis_one_piece.webm" type="video/webm">
+                    <source src="/assets/videos/vis_one_piece.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="swiper-slide" style="height: auto;">
+                  <video autoplay muted loop playsinline style="max-width: 540px; max-height: 320px; display: block; object-fit: contain;">
+                    <source src="/assets/videos/teaser1.webm" type="video/webm">
+                    <source src="/assets/videos/teaser1.mp4" type="video/mp4">
+                  </video>
+                </div>
               </div>
-              <div class="swiper-slide" style="height: auto;">
-                <video autoplay muted loop playsinline style="width: 100%; max-height: 270px; display: block; object-fit: contain;">
-                  <source src="/assets/videos/teaser1.webm" type="video/webm">
-                  <source src="/assets/videos/teaser1.mp4" type="video/mp4">
-                </video>
-              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+
+            <style>
+              .teaser-carousel .swiper {
+                padding-top: 0;
+                padding-bottom: 0;
+              }
+              
+              .teaser-carousel .swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: auto;
+              }
+
+              .teaser-carousel video {
+                max-width: 100%;
+                height: auto;
+              }
+
+              .teaser-carousel .swiper-button-next,
+              .teaser-carousel .swiper-button-prev {
+                color: #fff;
+                background: rgba(0,0,0,0.5);
+                padding: 10px 10px; /* Reduced from 30px 20px */
+                border-radius: 5px;
+                transform: scale(0.8);
+              }
+
+              .teaser-carousel .swiper-pagination {
+                bottom: 20px !important;
+              }
+            </style>
           </div>
-
-          <style>
-            .teaser-carousel .swiper-slide {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .teaser-carousel video {
-              max-width: 100%;
-              height: auto;
-            }
-
-            .teaser-carousel .swiper-button-next,
-            .teaser-carousel .swiper-button-prev {
-              color: #fff;
-              background: rgba(0,0,0,0.5);
-              padding: 30px 20px;
-              border-radius: 5px;
-              transform: scale(0.8);  /* Make navigation arrows slightly smaller */
-            }
-
-            .teaser-carousel .swiper-pagination {
-              bottom: 5px !important;
-            }
-          </style>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-top: 2rem;">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Method Overview</h2>
     <div class="content">
