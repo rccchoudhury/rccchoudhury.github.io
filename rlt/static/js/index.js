@@ -14,10 +14,7 @@ $(document).ready(function () {
         spaceBetween: 30,
         centeredSlides: true,
         loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+        autoplay: false,  // Disable autoplay to let videos play fully
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
