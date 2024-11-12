@@ -357,6 +357,23 @@
   .content.has-text-centered {
     margin-bottom: 1rem; /* Reduce space after the text content */
   }
+
+  .swiper {
+    margin: 0 !important; /* Remove all margins */
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 0 !important; /* Ensure no bottom margin on wrapper */
+  }
+
+  .content.has-text-centered {
+    margin-bottom: 0.5rem; /* Reduce space after the text content */
+  }
+
+  /* Add more specific override for the carousel container */
+  .section.is-light .container .swiper {
+    margin: 0 !important;
+  }
 </style>
 <body>
 
@@ -406,7 +423,7 @@
           </a>
         </div>
 
-        <div style="margin-top: 2rem;">
+        <div style="margin-top: 1rem;">
           <div class="container" style="max-width: 800px;">
             <div class="swiper teaser-carousel">
               <div class="swiper-wrapper">
@@ -440,7 +457,7 @@
               <div class="swiper-button-next"></div>
             </div>
 
-            <div class="content" style="text-align: center; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="content" style="text-align: center; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
               <p style="font-size: 1rem; color: #4a4a4a;">
                 Inspired by video compressors, RLT efficiently identifies patches from the input video that are repeated, and prunes them from the input. It then uses a duration encoding to tell the transformer what patches were removed.
 
