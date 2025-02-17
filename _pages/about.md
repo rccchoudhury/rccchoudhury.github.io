@@ -22,10 +22,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I'm a PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) at Carnegie Mellon University, advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). I'm supported by the [NSF GRFP](https://www.nsfgrfp.org/) Fellowship, and have spent time during my PhD at [Meta FAIR](https://ai.meta.com/). working with Jing Huang.
+I'm a PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) at Carnegie Mellon University, advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). I'm broadly interested in helping models to understand and generate visual content more efficiently. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
+My research is graciously supported by the [NSF GRFP](https://www.nsfgrfp.org/) Fellowship, and I'm also currently a Student Researcher at [ByteDance](https://team.doubao.com/en/), working with [Peter Lin](https://www.linkedin.com/in/shanchuanlin/) and [Lu Jiang](http://www.lujiang.info/) on accelerating video generation. 
 
-I'm broadly interested in making video understanding faster and more efficient. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
-
-Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles. Even before that, I graduated from [Caltech](https://www.caltech.edu/) with a B.S. in Computer Science, where I worked on multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/). 
+Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles.  I graduated from [Caltech](https://www.caltech.edu/) where I worked on multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/). 
 
 Outside of research, I enjoy running, lifting weights, watching sports and listening to electronic music.
