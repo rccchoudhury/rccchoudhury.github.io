@@ -22,9 +22,11 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I'm a PhD student in the [Robotics Institute](https://www.ri.cmu.edu/) at Carnegie Mellon University, advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). I'm broadly interested in helping models to understand and generate visual content more efficiently. In particular, I work on enabling vision algorithms to continuously perceive the world in high resolution and at 30+ FPS. 
-My research is graciously supported by the [NSF GRFP](https://www.nsfgrfp.org/) Fellowship, and I'm also currently a Student Researcher at [ByteDance](https://team.doubao.com/en/), working with [Peter Lin](https://www.linkedin.com/in/shanchuanlin/) and [Lu Jiang](http://www.lujiang.info/) on accelerating video generation. 
+I'm a fourth-year PhD student at Carnegie Mellon University's [Robotics Institute](https://www.ri.cmu.edu/), advised by [Kris Kitani](https://kriskitani.github.io/) and [László Jeni](https://www.laszlojeni.com/). My research broadly focuses on making visual models more efficient at understanding and generating visual content, particularly enabling algorithms to continuously perceive the world at high resolution and real-time frame rates (30+ FPS). My work is supported by the [NSF GRFP](https://www.nsfgrfp.org/) Fellowship.
 
-Before starting my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), where I worked on trajectory forecasting models for self-driving vehicles.  I graduated from [Caltech](https://www.caltech.edu/) where I worked on multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/). 
+Currently, I'm also a Student Researcher at [ByteDance](https://team.doubao.com/en/), collaborating with [Peter Lin](https://www.linkedin.com/in/shanchuanlin/) and [Lu Jiang](http://www.lujiang.info/) on accelerating video generation. 
+Previously, I interned at [Meta FAIR](https://ai.meta.com/research/), working with [Jing Huang](https://superirabbit.github.io/) on efficient video understanding.
 
-Outside of research, I enjoy running, lifting weights, watching sports and listening to electronic music.
+Before my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), developing trajectory forecasting models for self-driving vehicles, and even earlier I earned my bachelor's degree from [Caltech](https://www.caltech.edu/), where I explored multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/).
+
+Outside of research, I enjoy running, weightlifting, watching sports, and listening to electronic music.
