@@ -30,7 +30,7 @@ category: work
       </div>
       <div class="works-list">
         <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <!-- TODO: Replace with actual paper title -->
             <h5>Paper Title 1</h5>
@@ -42,7 +42,7 @@ category: work
           <i class="fas fa-external-link-alt"></i>
         </a>
         <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <h5>Paper Title 2</h5>
             <p>Brief description of the work and its main contribution.</p>
@@ -50,7 +50,7 @@ category: work
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <h5>Paper Title 3</h5>
             <p>Brief description of the work and its main contribution.</p>
@@ -73,20 +73,20 @@ category: work
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Rohan Choudhury*</a><sup>1</sup>,</span>
+                <a>Rohan Choudhury*</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Jung Eun Kim*</a><sup>1,2</sup>,</span>
+                  <a>Jung Eun Kim*</a><sup>1,2</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jinhyung Park</a><sup>1</sup>
+                    <a>Jinhyung Park</a><sup>1</sup>
                   </span>
                    <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Eunho Yang</a><sup>2</sup>
+                    <a>Eunho Yang</a><sup>2</sup>
                   </span>
                    <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">László A. Jeni</a><sup>1</sup>
+                    <a>László A. Jeni</a><sup>1</sup>
                   </span>
                    <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Kris M. Kitani</a><sup>1</sup>
+                    <a>Kris M. Kitani</a><sup>1</sup>
                   </span>
                   </div>
 
@@ -101,7 +101,7 @@ category: work
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -123,7 +123,7 @@ category: work
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -134,7 +134,7 @@ category: work
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -299,7 +299,7 @@ category: work
   author={Rohan Choudhury and Jung Eun Kim and Jinhyung Park and Eunho Yang and L{\'a}szl{\'o} A. Jeni and Kris M. Kitani},
   booktitle={International Conference on Learning Representations},
   year={2026},
-  url={https://rccchoudhury.github.io/apt}
+  url={https://rccchoudhury.github.io/apt/}
 }</code></pre>
     </div>
 </section>

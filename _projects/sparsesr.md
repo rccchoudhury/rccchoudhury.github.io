@@ -29,7 +29,7 @@ category: work
       </div>
       <div class="works-list">
         <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <!-- TODO: Replace with actual paper title -->
             <h5>Paper Title 1</h5>
@@ -41,7 +41,7 @@ category: work
           <i class="fas fa-external-link-alt"></i>
         </a>
         <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <h5>Paper Title 2</h5>
             <p>Brief description of the work and its main contribution.</p>
@@ -49,7 +49,7 @@ category: work
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+        <a class="work-item">
           <div class="work-info">
             <h5>Paper Title 3</h5>
             <p>Brief description of the work and its main contribution.</p>
@@ -239,7 +239,7 @@ category: work
   author={Rohan Choudhury and Jung Eun Kim and Jinhyung Park and Eunho Yang and L{\'a}szl{\'o} A. Jeni and Kris M. Kitani},
   booktitle={International Conference on Learning Representations},
   year={2026},
-  url={https://rccchoudhury.github.io/apt}
+  url={https://rccchoudhury.github.io/apt/}
 }</code></pre>
     </div>
 </section>
