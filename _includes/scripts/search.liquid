@@ -72,8 +72,7 @@
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
-      {%- assign posts_and_drafts = site.posts | concat: site.drafts -%}
-      {%- for post in posts_and_drafts -%}
+      {%- for post in site.posts -%}
         {
           {%- assign title = post.title | escape | strip -%}
           id: "post-{{ title | slugify }}",
