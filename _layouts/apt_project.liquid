@@ -1,0 +1,73 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="{{ page.title }}">
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords }}">
+  <meta name="author" content="{{ page.authors }}">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.img | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ page.title }} - Research Preview">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ page.img | absolute_url }}">
+  <meta name="twitter:image:alt" content="{{ page.title }} - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="{{ page.title }}">
+  <meta name="citation_publication_date" content="{{ page.year }}">
+  <meta name="citation_conference_title" content="{{ page.conference }}">
+  <meta name="citation_pdf_url" content="{{ page.pdf | absolute_url }}">
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="/assets/apt-template/static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apt-template/static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="/assets/apt-template/static/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/apt-template/static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="/assets/apt-template/static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/assets/apt-template/static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/assets/apt-template/static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="/assets/apt-template/static/js/fontawesome.all.min.js"></script>
+  <script defer src="/assets/apt-template/static/js/bulma-carousel.min.js"></script>
+  <script defer src="/assets/apt-template/static/js/bulma-slider.min.js"></script>
+  <script defer src="/assets/apt-template/static/js/index.js"></script>
+
+</head>
+<body>
+  {{ content }}
+</body>
+</html>
