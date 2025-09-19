@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "An Overview of Byte Pair Encoding (BPE)"
-date: 2025-09-17
+date: 2025-09-18
 description: "A brief introduction to the BPE algorithm and its use in modern NLP."
-published: false
+published: true
 ---
 
 Byte Pair Encoding (BPE) is a simple but powerful data compression technique that has become a cornerstone of modern Natural Language Processing (NLP). Originally developed for data compression, it has been adapted to create tokenizers that efficiently handle large and diverse vocabularies in language models.

@@ -67,7 +67,7 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-.button.is-dark span {
+.publication-links .button.is-dark span {
   color: white !important;
 }
 
