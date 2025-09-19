@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["custom_post.scss"],"names":[],"mappings":"AAAA,cACE","sourcesContent":[".post-content {\n font-family: \"Iowan Old Style\", serif;\n}\n"],"file":"custom_post.css"}
+{"version":3,"sourceRoot":"","sources":["custom_post.scss"],"names":[],"mappings":"AAAA,+BAEE","sourcesContent":["body .post-content,\n.post-title {\n font-family: \"Iowan Old Style\", serif;\n}\n"],"file":"custom_post.css"}
