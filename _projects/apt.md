@@ -52,50 +52,38 @@ category: work
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="/assets/apt-template/static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
+  <!-- Code Link -->
+  <span class="link-block">
+    <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="fab fa-github"></i>
+      </span>
+      <span>Code</span>
+    </a>
+  </span>
+  <!-- arXiv Link -->
+  <span class="link-block">
+    <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <i class="ai ai-arxiv"></i>
+      </span>
+      <span>arXiv</span>
+    </a>
+  </span>
+  <!-- Hugging Face Link -->
+  <span class="link-block">
+    <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+      <span class="icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+          <path d="M20.25 15a3.75 3.75 0 0 1-3.75 3.75H7.5A3.75 3.75 0 0 1 3.75 15V12a3.75 3.75 0 0 1 3.75-3.75h9A3.75 3.75 0 0 1 20.25 12Z"></path>
+          <path d="M9.43 8.34c.45-1.33 1.83-2.2 3.32-1.95 1.7.29 2.95 1.79 2.66 3.49"></path>
+          <path d="M14.57 15.66c-.45 1.33-1.83 2.2-3.32 1.95-1.7-.29-2.95-1.79-2.66-3.49"></path>
+        </svg>
+      </span>
+      <span>Hugging Face</span>
+    </a>
+  </span>
+</div>
           </div>
         </div>
       </div>
