@@ -217,6 +217,24 @@ category: work
 </section>
 <!-- End Examples -->
 
+<!-- Results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Here we show the relative speed-up from our method.
+          </p>
+          <img src="/assets/apt-template/static/images/carousel1.jpg" alt="Results visualization" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Results -->
+
 
 
 
