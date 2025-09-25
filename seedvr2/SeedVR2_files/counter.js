@@ -44,9 +44,9 @@
 
     function getLoc() {
         try {
-            return window?.location?.href ||
-                   document?.location?.href ||
-                   document?.URL ||
+            return (window && window.location && window.location.href) ||
+                   (document && document.location && document.location.href) ||
+                   (document && document.URL) ||
                    '';
         } catch (e) {
             return '';
