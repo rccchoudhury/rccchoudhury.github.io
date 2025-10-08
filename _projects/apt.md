@@ -27,31 +27,29 @@ category: work
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
                 <a>Rohan Choudhury*</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a>Jung Eun Kim*</a><sup>2,3</sup>,</span>
+              <span class="author-block">
+                <a>Jinhyung Park</a><sup>1</sup>,
+              </span>
                 <span class="author-block">
-                  <a>Jung Eun Kim*</a><sup>1,2</sup>,</span>
-                  <span class="author-block">
-                    <a>Jinhyung Park</a><sup>1</sup>
-                  </span>
-                   <span class="author-block">
-                    <a>Eunho Yang</a><sup>2</sup>
-                  </span>
-                   <span class="author-block">
-                    <a>László A. Jeni</a><sup>1</sup>
-                  </span>
-                   <span class="author-block">
-                    <a>Kris M. Kitani</a><sup>1</sup>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><sup>1</sup>Carnegie Mellon University, <sup>2</sup>KAIST<br>ICLR 2026</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
+                <a>Eunho Yang</a><sup>2</sup>,
+              </span>
+                <span class="author-block">
+                <a>László A. Jeni</a><sup>1</sup>,
+              </span>
+                <span class="author-block">
+                <a>Kris M. Kitani</a><sup>1</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your institution and conference/journal info -->
+              <span class="author-block"><sup>1</sup>Carnegie Mellon University, <sup>2</sup>KAIST, <sup>3</sup>General Robotics<br>ICLR 2026 Submission</span>
+              <!-- TODO: Remove this line if no equal contribution -->
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
   <!-- Code Link -->
   <span class="link-block">
     <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
@@ -119,18 +117,7 @@ category: work
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-           We propose Adaptive Patch Transformers (APT), a method to accelerate vision
-            transformers (ViTs) by using multiple different patch sizes within the same image.
-            APT reduces the total number of input tokens by using larger patch sizes in more
-            homogeneous image regions, and smaller patches in more complex ones. APT
-            achieves a drastic speedup in ViT inference and training, reducing throguhput by
-            40% on ViT-L and 50% on ViT-H while maintaining downstream performance. It
-            can be applied to a previously fine-tuned ViT and converges in as little as 1 epoch,
-            enabling training on high-resolution images with minimal compute budgets. It
-            also significantly reduces training and inference time with no performance degra-
-            dation on high-resolution dense visual tasks, achieving up to 30% faster training
-            and inference on visual QA, object detection and semantic segmentation. We will
-            release all code and trained models.
+           We propose Adaptive Patch Transformers (APT), a method to accelerate vision transformers (ViTs) by using multiple different patch sizes within the same image. APT reduces the total number of input tokens by using larger patch sizes in more homogeneous image regions, and smaller patches in more complex ones. APT achieves a drastic speedup in ViT inference and training, reducing throguhput by 40% on ViT-L and 50% on ViT-H while maintaining downstream performance. It can be applied to a previously fine-tuned ViT and converges in as little as 1 epoch, enabling training on high-resolution images with minimal compute budgets. It also significantly reduces training and inference time with no performance degradation on high-resolution dense visual tasks, achieving up to 30% faster training and inference on visual QA, object detection and semantic segmentation. We will release all code and trained models.
           </p>
         </div>
       </div>
@@ -147,14 +134,20 @@ category: work
       <h2 class="title is-3">Method Overview</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <div class="publication-video">
-            <video poster="" id="method-video" controls muted loop height="100%" preload="metadata">
-              <source src="/assets/apt-template/static/videos/carousel1.mp4" type="video/mp4">
-            </video>
+          <div class="publication-image">
+            <img src="/assets/apt-template/static/images/apt_system.png" alt="Method overview" loading="lazy"/>
           </div>
           <div class="content has-text-justified">
             <p>
-              An animated overview of our method.
+              An overview of our method.
+            </p>
+          </div>
+          <div class="publication-image">
+            <img src="/assets/apt-template/static/images/zeroconv.png" alt="Zero conv" loading="lazy"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              An overview of zero conv.
             </p>
           </div>
         </div>
@@ -212,10 +205,26 @@ category: work
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
+          <img src="/assets/apt-template/static/images/Table1.png" alt="Table 1" loading="lazy"/>
           <p>
-            Here we show the relative speed-up from our method.
+            <b>Full Fine-Tuning on ImageNet.</b> APT significantly reduces the wall-clock time to fine-tune a pre-trained backbone on ImageNet with no degradation in accuracy. We use the MAE training recipe for all cases. Note that ViT-B is trained for 2× more epochs than ViT-L.
           </p>
-          <img src="/assets/apt-template/static/images/carousel1.jpg" alt="Results visualization" loading="lazy"/>
+          <img src="/assets/apt-template/static/images/Table2.png" alt="Table 2" loading="lazy"/>
+          <p>
+            <b>1-epoch Fine-Tuning on ImageNet.</b> APT consistently achieves large speedups while matching or sometimes exceeding the original network’s performance after fine-tuning for 1 more epoch. Compared to only random masking or only resizing, APT offers the best tradeoff between speed and accuracy.
+          </p>
+          <img src="/assets/apt-template/static/images/Figure4.png" alt="Figure 4" loading="lazy"/>
+          <p>
+            <b>Accuracy vs. Throughput under different compute budgets.</b> Comparison between APT and layer-level merging methods on ViT-L and ViT-H. For a fairer evaluation, we also include their re-implemented Advanced (Adv) versions with FlashAttention, shown with a dashed line. APT consistently outperforms the baselines in both throughput and accuracy across all compute budgets.
+          </p>
+          <img src="/assets/apt-template/static/images/Table3.png" alt="Table 3" loading="lazy"/>
+          <p>
+            <b>Transfer to VQA.</b> APT enables significant throughput increase while matching or exceeding performance to the baseline.
+          </p>
+          <img src="/assets/apt-template/static/images/Table4_5.png" alt="Table 4,5" loading="lazy"/>
+          <p>
+            <b>Transfer to Object Detection and Semantic Segmentation.</b> APT can be scaled to high-resolution dense image tasks supporting window attention. Also, APT can handle pixel-level fine-grained tasks without compromising visual acuity.
+          </p>
         </div>
       </div>
     </div>
