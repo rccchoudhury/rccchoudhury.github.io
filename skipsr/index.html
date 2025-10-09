@@ -38,10 +38,16 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Faster Video Super-Resolution with Sparse Attention</h1>
+          <h1 class="title is-1 publication-title">SkipSR: Faster Super-Resolution with Token Skipping</h1>
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">Anonymous Authors</span>
+          </div>
+
+          <div class="notification is-warning is-light" style="margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p class="has-text-centered" style="margin: 0; font-size: 14px;">
+              <strong>Browser Note:</strong> If videos don't load properly in Chrome, please try Safari for the best viewing experience.
+            </p>
           </div>
 
         </div>
@@ -60,12 +66,12 @@
         <!-- Video Comparison Items -->
         <div class="carousel-item active" data-videos='{"left": "./SkipSR_files/astronaut_swim_base.mp4", "right": "./SkipSR_files/astronaut_swim_ours.mp4"}'>
           <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
-            <video class="leftVideo" muted loop preload="metadata" playsinline crossorigin="anonymous" style="width: 100%; height: auto; display: block;">
-              <source src="./SkipSR_files/astronaut_swim_base.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+            <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./SkipSR_files/astronaut_swim_base.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <video class="rightVideo" muted loop preload="metadata" playsinline crossorigin="anonymous" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
-              <source src="./SkipSR_files/astronaut_swim_ours.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+            <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
+              <source src="./SkipSR_files/astronaut_swim_ours.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
@@ -86,9 +92,11 @@
           <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
             <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
               <source src="./SkipSR_files/dancing_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
               <source src="./SkipSR_files/dancing_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
               <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
@@ -104,9 +112,11 @@
           <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
             <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
               <source src="./SkipSR_files/deer_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
               <source src="./SkipSR_files/deer_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
               <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
@@ -122,9 +132,11 @@
           <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
             <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
               <source src="./SkipSR_files/robot_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
               <source src="./SkipSR_files/robot_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
             </video>
             <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
               <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
@@ -166,8 +178,8 @@
         <div class="content has-text-justified">
           <p>
             Diffusion-based super-resolution (SR) is a key component in video generation and video restoration, but is slow and expensive, limiting scalability to higher resolutions and longer videos.
-Our key insight is that many regions in video are inherently low-detail and gain little from refinement, yet current methods process all pixels uniformly. To take advantage of this, we propose SkipSR, a simple framework for accelerating video SR by identifying low-detail regions directly from low-resolution input, then applying sparse attention to super-resolve only areas that require refinement. 
-This simple, yet effective strategy preserves perceptual quality in both standard and one-step diffusion SR models while significantly reducing computation. In standard SR benchmarks, our method achieves up to 40$\%$ faster inference than prior models without loss of quality, and when integrated into cascaded diffusion pipelines, it further improves the efficiency of high-resolution video generation.
+            Our key insight is that many regions in video are inherently low-detail and gain little from refinement, yet current methods process all pixels uniformly. To take advantage of this, we propose SkipSR, a simple framework for accelerating video SR by identifying low-detail regions directly from low-resolution input, then skipping computation on them entirely, only super-resolving the areas that require refinement. 
+            This simple yet effective strategy preserves perceptual quality in both standard and one-step diffusion SR models while significantly reducing computation. In standard SR benchmarks, our method achieves up to 60% faster end-to-end latency than prior models on 720p videos with no perceptible loss in quality.
           </p>
         </div>
       </div>
@@ -184,10 +196,11 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <p>
-            In this work, we present a one-step Diffusion Transformer (DiT) model designed for generic video restoration (VR) that tackles resolution constraints efficiently. 
-            We present an effective adaptive window attention mechanism, enabling efficient high-resolution (i.e., 1080p) restoration in a single forward step with faithful details.
-            With the adversarial post-training framework, we explore effective design improvements specific to video restoration, focusing on the loss function and progressive distillation.
-            Extensive experiments validate the effectiveness of our design, and demonstrate the superiority of our method over existing methods, both quantitatively and qualitatively.
+            In this work, we focus on accelerating diffusion-based super-resolution, which is particularly expensive due to the larger size of the input and output, but crucial to video generation pipelines.
+            Most prior works speed up diffusion transformers by reducing the number of steps or modify the attention mechanism. W We instead find that we can skip computation altogether for certain `simple' patches, 
+            accelerating computation significantly. We identify these patches with a lightweight CNN that predicts a binary mask, which is then used to route these patches entirely around the transformer. The un-skipped patches that are refined
+            retain their relative positions through a mask-aware rotary positional encoding. Extensive experiments and ablations demonstrate that our method preserves visual quality while significantly
+            accelerating end-to-end generation time. Our method is illustrated in the figure below, and several examples, along with the predicted mask, are visualized at the bottom of the page.
           </p>
           <div class="column">
             <img src="./SkipSR_files/iclr_overview_v2.png">
@@ -212,21 +225,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item active" style="display: block;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/astronaut_swim_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/astronaut_swim_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/astronaut_swim_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -238,21 +251,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/dancing_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/dancing_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/dancing_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -264,21 +277,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/deer_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/deer_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/deer_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -290,21 +303,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/portal_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/portal_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/portal_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -316,21 +329,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/robot_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/robot_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/robot_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -342,21 +355,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/skater_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/skater_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/skater_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -368,21 +381,21 @@ This simple, yet effective strategy preserves perceptual quality in both standar
         <div class="detailed-carousel-item" style="display: none;">
           <div class="columns video-sync-group">
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/terracotta_base.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/terracotta_ours.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
             </div>
             <div class="column">
-              <video controls muted loop width="100%" preload="metadata" class="sync-video" style="border-radius: 8px;">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
                 <source src="./SkipSR_files/terracotta_masked.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -426,6 +439,18 @@ This simple, yet effective strategy preserves perceptual quality in both standar
 
 <!-- Video Comparison Carousel JavaScript -->
 <script>
+// Enhanced logging for Chrome video debugging
+function logVideoError(video, error, context) {
+  console.error(`Video Error [${context}]:`, {
+    src: video.src,
+    error: error,
+    readyState: video.readyState,
+    networkState: video.networkState,
+    canPlayType: video.canPlayType('video/mp4'),
+    userAgent: navigator.userAgent
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const carouselContainer = document.querySelector('.video-carousel-container');
   const carouselItems = document.querySelectorAll('.carousel-item');
@@ -445,6 +470,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const slider = item.querySelector('.slider-handle');
     
     if (!container || !leftVideo || !rightVideo || !slider) return;
+    
+    // Add comprehensive error logging for both videos
+    [leftVideo, rightVideo].forEach((video, index) => {
+      const videoName = index === 0 ? 'left' : 'right';
+      
+      video.addEventListener('error', (e) => {
+        logVideoError(video, e.target.error, `${videoName} video error event`);
+      });
+      
+      video.addEventListener('loadstart', () => {
+        console.log(`${videoName} video loadstart:`, video.src);
+      });
+      
+      video.addEventListener('loadedmetadata', () => {
+        console.log(`${videoName} video metadata loaded:`, {
+          duration: video.duration,
+          videoWidth: video.videoWidth,
+          videoHeight: video.videoHeight
+        });
+      });
+      
+      video.addEventListener('canplay', () => {
+        console.log(`${videoName} video can play`);
+      });
+      
+      video.addEventListener('stalled', () => {
+        console.warn(`${videoName} video stalled`);
+      });
+      
+      video.addEventListener('suspend', () => {
+        console.warn(`${videoName} video suspended`);
+      });
+      
+      video.addEventListener('abort', () => {
+        console.warn(`${videoName} video aborted`);
+      });
+    });
     
     // Sync video playback with better loop handling
     leftVideo.addEventListener('play', () => {
@@ -582,32 +644,42 @@ document.addEventListener('DOMContentLoaded', function() {
       carouselItems[index].style.display = 'block';
       const videos = carouselItems[index].querySelectorAll('video');
       
-      // Load and play videos with better error handling
+      // Load and play videos with enhanced error handling
       videos.forEach(video => {
+        console.log('Attempting to load video:', video.src);
         video.load(); // Reload the video
         
         // Wait for video to be ready before playing
         const playPromise = video.play();
         if (playPromise !== undefined) {
           playPromise.then(() => {
-            // Video started playing successfully
+            console.log('Video playing successfully:', video.src);
             // Hide play overlay if it exists
             const overlay = carouselItems[index].querySelector('.play-overlay');
             if (overlay) overlay.style.display = 'none';
           }).catch(error => {
-            console.log('Video autoplay prevented:', error);
+            console.error('Video play failed:', {
+              src: video.src,
+              error: error,
+              readyState: video.readyState,
+              networkState: video.networkState
+            });
             // Show play overlay
             const overlay = carouselItems[index].querySelector('.play-overlay');
             if (overlay) {
               overlay.style.display = 'block';
               overlay.addEventListener('click', function() {
-                videos.forEach(v => v.play());
+                videos.forEach(v => {
+                  console.log('Manual play attempt:', v.src);
+                  v.play().catch(e => console.error('Manual play failed:', e));
+                });
                 this.style.display = 'none';
               }, { once: true });
             }
             // Add click-to-play functionality to videos
             video.addEventListener('click', function() {
-              this.play();
+              console.log('Click play attempt:', this.src);
+              this.play().catch(e => console.error('Click play failed:', e));
             }, { once: true });
           });
         }
@@ -727,20 +799,27 @@ document.addEventListener('DOMContentLoaded', function() {
       detailedCarouselItems[index].style.display = 'block';
       const videos = detailedCarouselItems[index].querySelectorAll('video');
       
-      // Load and play videos with better error handling
+      // Load and play videos with enhanced error handling for detailed carousel
       videos.forEach(video => {
+        console.log('Detailed carousel - Attempting to load video:', video.src);
         video.load(); // Reload the video
         
         // Wait for video to be ready before playing
         const playPromise = video.play();
         if (playPromise !== undefined) {
           playPromise.then(() => {
-            // Video started playing successfully
+            console.log('Detailed carousel - Video playing successfully:', video.src);
           }).catch(error => {
-            console.log('Video autoplay prevented:', error);
+            console.error('Detailed carousel - Video play failed:', {
+              src: video.src,
+              error: error,
+              readyState: video.readyState,
+              networkState: video.networkState
+            });
             // Add click-to-play functionality to videos
             video.addEventListener('click', function() {
-              this.play();
+              console.log('Detailed carousel - Click play attempt:', this.src);
+              this.play().catch(e => console.error('Detailed carousel - Click play failed:', e));
             }, { once: true });
           });
         }
