@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://iceclear.github.io/projects/seedvr2/ -->
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="description" content="SkipSR.">
+  <meta name="keywords" content="Diffusion transformer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkipSR</title>
+
+  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./SkipSR_files/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./SkipSR_files/bulma.min.css">
+  <link rel="stylesheet" href="./SkipSR_files/bulma.min.css">
+  <link rel="stylesheet" href="./SkipSR_files/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./SkipSR_files/academicons.min.css">
+  <link rel="stylesheet" href="./SkipSR_files/index.css">
+  <!-- <link rel="icon" href="./images/logo.svg"> -->
+
+  
+  <!-- Vendor Stylesheets -->
+  <!--=================js==========================-->
+  <link rel="stylesheet" href="./SkipSR_files/tab_gallery.css">
+  <link rel="stylesheet" href="./SkipSR_files/juxtapose.css">
+  <!-- <script src="./static/js/index.js"></script> -->
+  <!-- <link rel="stylesheet" href="./menlo"> -->
+  <link rel="stylesheet" href="./SkipSR_files/image_card_fader.css">
+  <link rel="stylesheet" href="./SkipSR_files/image_card_slider.css">
+
+  <!-- custom css file  -->
+  <link rel="stylesheet" href="./SkipSR_files/style.css">
+  <link rel="stylesheet" href="./SkipSR_files/twentytwenty.css">
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SkipSR: Faster Super-Resolution with Token Skipping</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Authors</span>
+          </div>
+
+          <div class="notification is-warning is-light" style="margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <p class="has-text-centered" style="margin: 0; font-size: 14px;">
+              <strong>Browser Note:</strong> If videos don't load properly in Chrome, please try Safari for the best viewing experience.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Comparison Carousel -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Carousel Container -->
+      <div class="video-carousel-container" style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;">
+        
+        <!-- Video Comparison Items -->
+        <div class="carousel-item active" data-videos='{"left": "./SkipSR_files/astronaut_swim_base.mp4", "right": "./SkipSR_files/astronaut_swim_ours.mp4"}'>
+          <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+            <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./SkipSR_files/astronaut_swim_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
+              <source src="./SkipSR_files/astronaut_swim_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
+            </div>
+            <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SeedVR</div>
+            <div style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SkipSR (Ours)</div>
+            <!-- Speed Indicator -->
+            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(46, 204, 113, 0.9); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">⚡ 1.6x Faster</div>
+            <!-- Play Button Overlay -->
+            <div class="play-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); border-radius: 50%; width: 60px; height: 60px; display: none; cursor: pointer; z-index: 15;">
+              <div style="position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); width: 0; height: 0; border-left: 20px solid white; border-top: 12px solid transparent; border-bottom: 12px solid transparent;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-videos='{"left": "./SkipSR_files/dancing_base.mp4", "right": "./SkipSR_files/dancing_ours.mp4"}' style="display: none;">
+          <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+            <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./SkipSR_files/dancing_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
+              <source src="./SkipSR_files/dancing_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
+            </div>
+            <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SeedVR</div>
+            <div style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SkipSR (Ours)</div>
+            <!-- Speed Indicator -->
+            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(46, 204, 113, 0.9); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">⚡ 1.6x Faster</div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-videos='{"left": "./SkipSR_files/deer_base.mp4", "right": "./SkipSR_files/deer_ours.mp4"}' style="display: none;">
+          <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+            <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./SkipSR_files/deer_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
+              <source src="./SkipSR_files/deer_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
+            </div>
+            <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SeedVR</div>
+            <div style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SkipSR (Ours)</div>
+            <!-- Speed Indicator -->
+            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(46, 204, 113, 0.9); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">⚡ 1.6x Faster</div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-videos='{"left": "./SkipSR_files/robot_base.mp4", "right": "./SkipSR_files/robot_ours.mp4"}' style="display: none;">
+          <div class="video-comparison-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+            <video class="leftVideo" muted loop preload="metadata" playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./SkipSR_files/robot_base.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video class="rightVideo" muted loop preload="metadata" playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0px, 400px, 1000px, 400px);">
+              <source src="./SkipSR_files/robot_ours.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: #fff; cursor: ew-resize; z-index: 10; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>
+            </div>
+            <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SeedVR</div>
+            <div style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 4px; font-size: 16px; font-weight: 500;">SkipSR (Ours)</div>
+            <!-- Speed Indicator -->
+            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(46, 204, 113, 0.9); color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;">⚡ 1.6x Faster</div>
+          </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <button class="carousel-nav prev" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 20;">
+          <span style="font-size: 24px;">‹</span>
+        </button>
+        <button class="carousel-nav next" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 20;">
+          <span style="font-size: 24px;">›</span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators" style="text-align: center; margin-top: 20px;">
+          <span class="indicator active" data-slide="0" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #3273dc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="indicator" data-slide="1" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="indicator" data-slide="2" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="indicator" data-slide="3" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <!-- <div class="column"> -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion-based super-resolution (SR) is a key component in video generation and video restoration, but is slow and expensive, limiting scalability to higher resolutions and longer videos.
+            Our key insight is that many regions in video are inherently low-detail and gain little from refinement, yet current methods process all pixels uniformly. To take advantage of this, we propose SkipSR, a simple framework for accelerating video SR by identifying low-detail regions directly from low-resolution input, then skipping computation on them entirely, only super-resolving the areas that require refinement. 
+            This simple yet effective strategy preserves perceptual quality in both standard and one-step diffusion SR models while significantly reducing computation. In standard SR benchmarks, our method achieves up to 60% faster end-to-end latency than prior models on 720p videos with no perceptible loss in quality.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+      <div class="column">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we focus on accelerating diffusion-based super-resolution, which is particularly expensive due to the larger size of the input and output, but crucial to video generation pipelines.
+            Most prior works speed up diffusion transformers by reducing the number of steps or modify the attention mechanism. W We instead find that we can skip computation altogether for certain `simple' patches, 
+            accelerating computation significantly. We identify these patches with a lightweight CNN that predicts a binary mask, which is then used to route these patches entirely around the transformer. The un-skipped patches that are refined
+            retain their relative positions through a mask-aware rotary positional encoding. Extensive experiments and ablations demonstrate that our method preserves visual quality while significantly
+            accelerating end-to-end generation time. Our method is illustrated in the figure below, and several examples, along with the predicted mask, are visualized at the bottom of the page.
+          </p>
+          <div class="column">
+            <img src="./SkipSR_files/iclr_overview_v2.png">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Video Comparisons Carousel -->
+<section class="hero is-light">
+  <div class="hero-body" style="padding: 3rem 1.5rem;">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Detailed Video Comparisons</h2>
+      
+      <!-- Carousel Container -->
+      <div class="detailed-video-carousel-container" style="position: relative; width: 100%; max-width: 1400px; margin: 0 auto;">
+        
+        <!-- Video Comparison Items -->
+        <div class="detailed-carousel-item active" style="display: block;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/astronaut_swim_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/astronaut_swim_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/astronaut_swim_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/dancing_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/dancing_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/dancing_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/deer_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/deer_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/deer_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/portal_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/portal_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/portal_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/robot_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/robot_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/robot_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/skater_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/skater_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/skater_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailed-carousel-item" style="display: none;">
+          <div class="columns video-sync-group">
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/terracotta_base.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">SkipSR</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/terracotta_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Ours (1.6x faster)</div>
+            </div>
+            <div class="column">
+              <video controls muted loop width="100%" preload="metadata" playsinline class="sync-video" style="border-radius: 8px;">
+                <source src="./SkipSR_files/terracotta_masked.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 4px; font-size: 14px;">Skipped Patches</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <button class="detailed-carousel-nav prev" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 20;">
+          <span style="font-size: 24px;">‹</span>
+        </button>
+        
+        <button class="detailed-carousel-nav next" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 20;">
+          <span style="font-size: 24px;">›</span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="detailed-carousel-indicators" style="text-align: center; margin-top: 40px;">
+          <span class="detailed-indicator active" data-slide="0" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #3273dc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="1" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="2" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="3" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="4" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="5" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+          <span class="detailed-indicator" data-slide="6" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Image Slider Javascripts -->
+<!--=================Functions==========================-->
+<!-- custom js file  -->
+  <!-- <script defer src="./assets/js/fontawesome.all.min.js"></script> -->
+  <!-- Load minimal JavaScript files -->
+<script defer src="./SkipSR_files/fontawesome.all.min.js"></script>
+
+<!-- Video Comparison Carousel JavaScript -->
+<script>
+// Enhanced logging for Chrome video debugging
+function logVideoError(video, error, context) {
+  console.error(`Video Error [${context}]:`, {
+    src: video.src,
+    error: error,
+    readyState: video.readyState,
+    networkState: video.networkState,
+    canPlayType: video.canPlayType('video/mp4'),
+    userAgent: navigator.userAgent
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselContainer = document.querySelector('.video-carousel-container');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const prevBtn = document.querySelector('.carousel-nav.prev');
+  const nextBtn = document.querySelector('.carousel-nav.next');
+  const indicators = document.querySelectorAll('.indicator');
+  
+  let currentSlide = 0;
+  let isDragging = false;
+  let currentContainer = null;
+  let currentSlider = null;
+  
+  function initializeVideoComparison(item) {
+    const container = item.querySelector('.video-comparison-container');
+    const leftVideo = item.querySelector('.leftVideo');
+    const rightVideo = item.querySelector('.rightVideo');
+    const slider = item.querySelector('.slider-handle');
+    
+    if (!container || !leftVideo || !rightVideo || !slider) return;
+    
+    // Add comprehensive error logging for both videos
+    [leftVideo, rightVideo].forEach((video, index) => {
+      const videoName = index === 0 ? 'left' : 'right';
+      
+      video.addEventListener('error', (e) => {
+        logVideoError(video, e.target.error, `${videoName} video error event`);
+      });
+      
+      video.addEventListener('loadstart', () => {
+        console.log(`${videoName} video loadstart:`, video.src);
+      });
+      
+      video.addEventListener('loadedmetadata', () => {
+        console.log(`${videoName} video metadata loaded:`, {
+          duration: video.duration,
+          videoWidth: video.videoWidth,
+          videoHeight: video.videoHeight
+        });
+      });
+      
+      video.addEventListener('canplay', () => {
+        console.log(`${videoName} video can play`);
+      });
+      
+      video.addEventListener('stalled', () => {
+        console.warn(`${videoName} video stalled`);
+      });
+      
+      video.addEventListener('suspend', () => {
+        console.warn(`${videoName} video suspended`);
+      });
+      
+      video.addEventListener('abort', () => {
+        console.warn(`${videoName} video aborted`);
+      });
+    });
+    
+    // Sync video playback with better loop handling
+    leftVideo.addEventListener('play', () => {
+      if (!rightVideo.paused) return;
+      rightVideo.play();
+    });
+    leftVideo.addEventListener('pause', () => {
+      if (rightVideo.paused) return;
+      rightVideo.pause();
+    });
+    leftVideo.addEventListener('seeked', () => {
+      if (Math.abs(rightVideo.currentTime - leftVideo.currentTime) > 0.1) {
+        rightVideo.currentTime = leftVideo.currentTime;
+      }
+    });
+    
+    rightVideo.addEventListener('play', () => {
+      if (!leftVideo.paused) return;
+      leftVideo.play();
+    });
+    rightVideo.addEventListener('pause', () => {
+      if (leftVideo.paused) return;
+      leftVideo.pause();
+    });
+    rightVideo.addEventListener('seeked', () => {
+      if (Math.abs(leftVideo.currentTime - rightVideo.currentTime) > 0.1) {
+        leftVideo.currentTime = rightVideo.currentTime;
+      }
+    });
+    
+    // Handle video end/loop events to prevent spazzing
+    leftVideo.addEventListener('ended', () => {
+      leftVideo.currentTime = 0;
+      rightVideo.currentTime = 0;
+      if (!leftVideo.paused) {
+        leftVideo.play();
+        rightVideo.play();
+      }
+    });
+    
+    rightVideo.addEventListener('ended', () => {
+      leftVideo.currentTime = 0;
+      rightVideo.currentTime = 0;
+      if (!rightVideo.paused) {
+        leftVideo.play();
+        rightVideo.play();
+      }
+    });
+    
+    function updateClip(percentage) {
+      const containerWidth = container.offsetWidth;
+      const clipX = containerWidth * percentage;
+      
+      slider.style.left = (percentage * 100) + '%';
+      rightVideo.style.clip = `rect(0px, ${containerWidth}px, 2000px, ${clipX}px)`;
+    }
+    
+    function handleMouseMove(e) {
+      if (!isDragging || currentContainer !== container) return;
+      
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = Math.max(0, Math.min(1, x / rect.width));
+      
+      updateClip(percentage);
+    }
+    
+    function handleMouseUp() {
+      isDragging = false;
+      currentContainer = null;
+      currentSlider = null;
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    }
+    
+    slider.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      currentContainer = container;
+      currentSlider = slider;
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      e.preventDefault();
+    });
+    
+    // Touch support
+    slider.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      currentContainer = container;
+      currentSlider = slider;
+      e.preventDefault();
+    });
+    
+    document.addEventListener('touchmove', function(e) {
+      if (!isDragging || currentContainer !== container) return;
+      
+      const rect = container.getBoundingClientRect();
+      const x = e.touches[0].clientX - rect.left;
+      const percentage = Math.max(0, Math.min(1, x / rect.width));
+      
+      updateClip(percentage);
+      e.preventDefault();
+    });
+    
+    document.addEventListener('touchend', function() {
+      if (currentContainer === container) {
+        isDragging = false;
+        currentContainer = null;
+        currentSlider = null;
+      }
+    });
+    
+    // Initialize at 50%
+    updateClip(0.5);
+  }
+  
+  function showSlide(index) {
+    // Hide all items
+    carouselItems.forEach(item => {
+      item.style.display = 'none';
+      const videos = item.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+    
+    // Update indicators
+    indicators.forEach((indicator, i) => {
+      indicator.style.background = i === index ? '#3273dc' : '#ccc';
+      indicator.classList.toggle('active', i === index);
+    });
+    
+    // Show current item
+    if (carouselItems[index]) {
+      carouselItems[index].style.display = 'block';
+      const videos = carouselItems[index].querySelectorAll('video');
+      
+      // Load and play videos with enhanced error handling
+      videos.forEach(video => {
+        console.log('Attempting to load video:', video.src);
+        video.load(); // Reload the video
+        
+        // Wait for video to be ready before playing
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            console.log('Video playing successfully:', video.src);
+            // Hide play overlay if it exists
+            const overlay = carouselItems[index].querySelector('.play-overlay');
+            if (overlay) overlay.style.display = 'none';
+          }).catch(error => {
+            console.error('Video play failed:', {
+              src: video.src,
+              error: error,
+              readyState: video.readyState,
+              networkState: video.networkState
+            });
+            // Show play overlay
+            const overlay = carouselItems[index].querySelector('.play-overlay');
+            if (overlay) {
+              overlay.style.display = 'block';
+              overlay.addEventListener('click', function() {
+                videos.forEach(v => {
+                  console.log('Manual play attempt:', v.src);
+                  v.play().catch(e => console.error('Manual play failed:', e));
+                });
+                this.style.display = 'none';
+              }, { once: true });
+            }
+            // Add click-to-play functionality to videos
+            video.addEventListener('click', function() {
+              console.log('Click play attempt:', this.src);
+              this.play().catch(e => console.error('Click play failed:', e));
+            }, { once: true });
+          });
+        }
+      });
+    }
+    
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    const next = (currentSlide + 1) % carouselItems.length;
+    showSlide(next);
+  }
+  
+  function prevSlide() {
+    const prev = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+    showSlide(prev);
+  }
+  
+  // Initialize all video comparisons
+  carouselItems.forEach(item => {
+    initializeVideoComparison(item);
+  });
+  
+  // Event listeners
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => showSlide(index));
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+  });
+  
+  // Initialize first slide
+  showSlide(0);
+  
+  // Initialize three-video synchronization for gallery
+  const videoSyncGroups = document.querySelectorAll('.video-sync-group');
+  
+  videoSyncGroups.forEach(group => {
+    const videos = group.querySelectorAll('.sync-video');
+    
+    if (videos.length === 3) {
+      // Add event listeners to sync all three videos
+      videos.forEach((video, index) => {
+        video.addEventListener('play', () => {
+          videos.forEach((otherVideo, otherIndex) => {
+            if (otherIndex !== index && otherVideo.paused) {
+              otherVideo.currentTime = video.currentTime;
+              otherVideo.play();
+            }
+          });
+        });
+        
+        video.addEventListener('pause', () => {
+          videos.forEach((otherVideo, otherIndex) => {
+            if (otherIndex !== index && !otherVideo.paused) {
+              otherVideo.pause();
+            }
+          });
+        });
+        
+        video.addEventListener('seeked', () => {
+          videos.forEach((otherVideo, otherIndex) => {
+            if (otherIndex !== index && Math.abs(otherVideo.currentTime - video.currentTime) > 0.1) {
+              otherVideo.currentTime = video.currentTime;
+            }
+          });
+        });
+        
+        // Handle video end/loop events for three-video sync
+        video.addEventListener('ended', () => {
+          videos.forEach(syncVideo => {
+            syncVideo.currentTime = 0;
+            if (!syncVideo.paused) {
+              syncVideo.play();
+            }
+          });
+        });
+      });
+    }
+  });
+
+  // Initialize detailed carousel
+  const detailedCarouselContainer = document.querySelector('.detailed-video-carousel-container');
+  const detailedCarouselItems = document.querySelectorAll('.detailed-carousel-item');
+  const detailedPrevBtn = document.querySelector('.detailed-carousel-nav.prev');
+  const detailedNextBtn = document.querySelector('.detailed-carousel-nav.next');
+  const detailedIndicators = document.querySelectorAll('.detailed-indicator');
+  
+  let currentDetailedSlide = 0;
+  
+  function showDetailedSlide(index) {
+    // Hide all items
+    detailedCarouselItems.forEach(item => {
+      item.style.display = 'none';
+      const videos = item.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+    
+    // Update indicators
+    detailedIndicators.forEach((indicator, i) => {
+      indicator.style.background = i === index ? '#3273dc' : '#ccc';
+      indicator.classList.toggle('active', i === index);
+    });
+    
+    // Show current item
+    if (detailedCarouselItems[index]) {
+      detailedCarouselItems[index].style.display = 'block';
+      const videos = detailedCarouselItems[index].querySelectorAll('video');
+      
+      // Load and play videos with enhanced error handling for detailed carousel
+      videos.forEach(video => {
+        console.log('Detailed carousel - Attempting to load video:', video.src);
+        video.load(); // Reload the video
+        
+        // Wait for video to be ready before playing
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            console.log('Detailed carousel - Video playing successfully:', video.src);
+          }).catch(error => {
+            console.error('Detailed carousel - Video play failed:', {
+              src: video.src,
+              error: error,
+              readyState: video.readyState,
+              networkState: video.networkState
+            });
+            // Add click-to-play functionality to videos
+            video.addEventListener('click', function() {
+              console.log('Detailed carousel - Click play attempt:', this.src);
+              this.play().catch(e => console.error('Detailed carousel - Click play failed:', e));
+            }, { once: true });
+          });
+        }
+      });
+    }
+    
+    currentDetailedSlide = index;
+  }
+  
+  function nextDetailedSlide() {
+    const next = (currentDetailedSlide + 1) % detailedCarouselItems.length;
+    showDetailedSlide(next);
+  }
+  
+  function prevDetailedSlide() {
+    const prev = (currentDetailedSlide - 1 + detailedCarouselItems.length) % detailedCarouselItems.length;
+    showDetailedSlide(prev);
+  }
+  
+  // Event listeners for detailed carousel
+  if (detailedPrevBtn) detailedPrevBtn.addEventListener('click', prevDetailedSlide);
+  if (detailedNextBtn) detailedNextBtn.addEventListener('click', nextDetailedSlide);
+  
+  detailedIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => showDetailedSlide(index));
+  });
+  
+  // Initialize first detailed slide
+  showDetailedSlide(0);
+});
+</script>
+<div class="jvectormap-tip"></div></body></html>
