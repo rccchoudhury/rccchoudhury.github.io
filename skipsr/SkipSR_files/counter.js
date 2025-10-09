@@ -61,10 +61,17 @@
             keepalive: true,
             body: JSON.stringify(data)
         })
-            .then(res => options?.callback?.({ status: res.status }))
-            .catch(err => options?.callback?.({ error: err }));
+            .then(function(res) {
+                if (options && typeof options.callback === 'function') {
+                    options.callback({ status: res.status });
+                }
+            })
+            .catch(function(err) {
+                if (options && typeof options.callback === 'function') {
+                    options.callback({ error: err });
+                }
+            });
     }
-
 
     function handleVisibilityChange() {
         if ("visible" === document.visibilityState && document.hasFocus() && null === timeStart) {
@@ -140,7 +147,7 @@
     }
 
     if (doc.visibilityState === "hidden" || doc.visibilityState === "prerender") {
-        doc.addEventListener("visibilitychange", () => {
+        doc.addEventListener("visibilitychange", function() {
             console.log('visibility changed');
             if (!currentPath && doc.visibilityState === "visible") onChange();
         });
@@ -148,7 +155,7 @@
         onChange();
     }
 
-    window.addEventListener("pageshow", event => {
+    window.addEventListener("pageshow", function(event) {
         if (event.persisted) onChange();
     });
 })();
