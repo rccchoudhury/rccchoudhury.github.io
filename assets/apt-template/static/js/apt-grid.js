@@ -10,6 +10,23 @@
     // Controls live outside the figure; select by ID globally
     const range = document.getElementById('apt-base-size-range');
     const number = document.getElementById('apt-base-size-number');
+    const numScalesGroup = document.getElementById('apt-num-scales-group');
+    // Threshold rows and sliders for S=2..4 (S-1 thresholds)
+    const thrRows = {
+      s2: document.getElementById('apt-threshold-row-s2'),
+      s3: document.getElementById('apt-threshold-row-s3'),
+      s4: document.getElementById('apt-threshold-row-s4'),
+    };
+    const thrRanges = {
+      s2: document.getElementById('apt-threshold-range-s2'),
+      s3: document.getElementById('apt-threshold-range-s3'),
+      s4: document.getElementById('apt-threshold-range-s4'),
+    };
+    const thrValues = {
+      s2: document.getElementById('apt-threshold-value-s2'),
+      s3: document.getElementById('apt-threshold-value-s3'),
+      s4: document.getElementById('apt-threshold-value-s4'),
+    };
     // Carousel buttons inside the root
     const prevBtn = root.querySelector('.apt-nav-prev');
     const nextBtn = root.querySelector('.apt-nav-next');
@@ -19,6 +36,7 @@
     // Stats overlay elements
     const statsSize = document.getElementById('apt-stats-size');
     const statsTokens = document.getElementById('apt-stats-tokens');
+    const statsAptTokens = document.getElementById('apt-stats-apt-tokens');
 
     // Image list for carousel navigation
     const imageList = [
@@ -61,25 +79,209 @@
       const w = rect.width;
       const h = rect.height;
 
-      // Draw grid in display coordinates
+      // Clear
       ctx.clearRect(0, 0, w, h);
+
+      // Compute base grid dims and derive multi-scale sizes
+      const base = Math.max(2, patchSize|0);
+      const cols = Math.ceil(w / base);
+      const rows = Math.ceil(h / base);
+      const S = (() => {
+        const checked = numScalesGroup?.querySelector('input[name="apt-num-scales"]:checked');
+        const v = parseInt(checked?.value || '2', 10);
+        return Math.max(2, Math.min(4, v));
+      })();
+      const patchSizes = Array.from({length: S}, (_, i) => base * Math.pow(2, i)); // ascending
+      const gridDims = patchSizes.map(ps => ({
+        ps,
+        cols: Math.ceil(w / ps),
+        rows: Math.ceil(h / ps),
+      }));
+
+      // Update threshold size labels (largest→smaller)
+      // Mapping: s2 -> largest (index S-1), s3 -> next (S-2), s4 -> next (S-3)
+      const lblS2 = document.getElementById('apt-threshold-size-s2');
+      const lblS3 = document.getElementById('apt-threshold-size-s3');
+      const lblS4 = document.getElementById('apt-threshold-size-s4');
+      if (lblS2 && S >= 2) lblS2.textContent = `${patchSizes[S-1]} px`;
+      if (lblS3 && S >= 3) lblS3.textContent = `${patchSizes[S-2]} px`;
+      if (lblS4 && S >= 4) lblS4.textContent = `${patchSizes[S-3]} px`;
+
+      // Obtain a grayscale image at display size using an offscreen canvas
+      const off = document.createElement('canvas');
+      off.width = Math.max(1, Math.round(w));
+      off.height = Math.max(1, Math.round(h));
+      const octx = off.getContext('2d');
+      octx.drawImage(img, 0, 0, off.width, off.height);
+      const imgData = octx.getImageData(0, 0, off.width, off.height);
+      const rgba = imgData.data; // RGBA interleaved
+
+      // Normalize image to [-1, 1] using mean=std=0.5 per channel, then compute luminance
+      // r_n = (r/255 - 0.5)/0.5 = r/127.5 - 1
+      // Map luminance in [-1,1] to [0,1] for binning
+      const W = off.width, H = off.height;
+      const bins = 512; // higher resolution entropy bins
+      const maxEntropy = Math.log2(bins);
+      const q = new Uint8Array(W * H);
+      for (let i = 0, p = 0; i < rgba.length; i += 4, p++){
+        const r = rgba[i], g = rgba[i+1], b = rgba[i+2];
+        const rn = r / 127.5 - 1.0;
+        const gn = g / 127.5 - 1.0;
+        const bn = b / 127.5 - 1.0;
+        const lumN = 0.2989*rn + 0.5870*gn + 0.1140*bn; // in [-1,1]
+        let v01 = (lumN + 1.0) * 0.5; // [0,1]
+        if (v01 < 0) v01 = 0; else if (v01 > 1) v01 = 1;
+        const bin = Math.min(bins - 1, (v01 * bins) | 0);
+        q[p] = bin;
+      }
+
+      // Build integral histograms only when bins are modest; otherwise fallback to direct per-patch histograms
+      let useIntegral = bins <= 128;
+      let stride = 0, planeSize = 0, integral = null;
+      if (useIntegral){
+        stride = (W + 1);
+        planeSize = (H + 1) * (W + 1);
+        integral = new Uint32Array(bins * planeSize);
+        for (let y = 0; y < H; y++){
+          const rowBase = y * W;
+          const rowSum = new Uint32Array(bins);
+          for (let x = 0; x < W; x++){
+            const bin = q[rowBase + x];
+            rowSum[bin]++;
+            const outIdxBase = (y + 1) * stride + (x + 1);
+            const prevRowBase = y * stride + (x + 1);
+            for (let b = 0, plane = 0; b < bins; b++, plane += planeSize){
+              integral[plane + outIdxBase] = integral[plane + prevRowBase] + rowSum[b];
+            }
+          }
+        }
+      }
+
+      function rectCount(bin, x0, y0, x1, y1){
+        const plane = bin * planeSize;
+        const A = integral[plane + y0 * stride + x0];
+        const B = integral[plane + y0 * stride + x1];
+        const C = integral[plane + y1 * stride + x0];
+        const D = integral[plane + y1 * stride + x1];
+        return D - B - C + A;
+      }
+
+      // Compute entropy maps for all scales using the integral histograms
+      const entropies = gridDims.map(({ps, cols, rows}) => {
+        const arr = new Float32Array(rows * cols);
+        if (useIntegral){
+          for (let r = 0; r < rows; r++){
+            for (let c = 0; c < cols; c++){
+              const x0 = c * ps, y0 = r * ps;
+              const x1 = Math.min(x0 + ps, W), y1 = Math.min(y0 + ps, H);
+              const area = (x1 - x0) * (y1 - y0) || 1;
+              let Hsum = 0;
+              for (let b = 0; b < bins; b++){
+                const cnt = rectCount(b, x0, y0, x1, y1);
+                if (cnt){
+                  const p = cnt / area;
+                  Hsum -= p * Math.log2(p);
+                }
+              }
+              arr[r*cols + c] = Hsum;
+            }
+          }
+        } else {
+          // Direct per-patch histogram counting for high bin counts
+          const hist = new Uint16Array(bins);
+          for (let r = 0; r < rows; r++){
+            for (let c = 0; c < cols; c++){
+              hist.fill(0);
+              const x0 = c * ps, y0 = r * ps;
+              const x1 = Math.min(x0 + ps, W), y1 = Math.min(y0 + ps, H);
+              const area = (x1 - x0) * (y1 - y0) || 1;
+              for (let y = y0; y < y1; y++){
+                const baseIdx = y * W + x0;
+                for (let x = x0; x < x1; x++){
+                  hist[q[baseIdx + (x - x0)]]++;
+                }
+              }
+              let Hsum = 0;
+              for (let b = 0; b < bins; b++){
+                const cnt = hist[b];
+                if (cnt){
+                  const p = cnt / area;
+                  Hsum -= p * Math.log2(p);
+                }
+              }
+              arr[r*cols + c] = Hsum;
+            }
+          }
+        }
+        return arr;
+      });
+
+      // Read thresholds in bits for S-1 levels (order: largest -> smaller)
+      const thrBitsList = [];
+      if (S >= 2) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s2?.value || '5.0'))));
+      if (S >= 3) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s3?.value || '5.0'))));
+      if (S >= 4) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s4?.value || '5.0'))));
+      // Update displayed values (snap to 0.5 step already enforced by input)
+      if (thrValues.s2 && thrRanges.s2) thrValues.s2.textContent = parseFloat(thrRanges.s2.value).toFixed(1);
+      if (thrValues.s3 && thrRanges.s3) thrValues.s3.textContent = parseFloat(thrRanges.s3.value).toFixed(1);
+      if (thrValues.s4 && thrRanges.s4) thrValues.s4.textContent = parseFloat(thrRanges.s4.value).toFixed(1);
+
+      // Create masks per scale (Uint8Array) and apply hierarchical non-overlap
+      const masks = gridDims.map(({rows, cols}) => new Uint8Array(rows * cols));
+      // Smallest scale (index 0) defaults to 1 (selected)
+      masks[0].fill(1);
+      // For larger scales i=1..S-1: select where entropy < threshold_i (indexing thr over largest->smaller)
+      for (let i = S-1; i >= 1; i--){
+        const {rows, cols} = gridDims[i];
+        const ent = entropies[i];
+        const thrBits = thrBitsList[(S-1) - i] ?? maxEntropy; // thresholds[0] -> largest (i=S-1)
+        const mask = masks[i];
+        for (let r = 0; r < rows; r++){
+          for (let c = 0; c < cols; c++){
+            mask[r*cols + c] = ent[r*cols + c] < thrBits ? 1 : 0;
+          }
+        }
+      }
+      // Upsample larger masks to clear smaller masks (non-overlapping)
+      for (let i = S-1; i >= 1; i--){
+        const {ps: psBig, rows: rBig, cols: cBig} = gridDims[i];
+        for (let j = i-1; j >= 0; j--){
+          const {ps: psSmall, rows: rSmall, cols: cSmall} = gridDims[j];
+          const scale = Math.max(1, Math.floor(psBig / psSmall));
+          for (let r = 0; r < rBig; r++){
+            for (let c = 0; c < cBig; c++){
+              if (!masks[i][r*cBig + c]) continue;
+              const rs0 = r * scale;
+              const cs0 = c * scale;
+              const rs1 = Math.min(rSmall, rs0 + scale);
+              const cs1 = Math.min(cSmall, cs0 + scale);
+              for (let rr = rs0; rr < rs1; rr++){
+                for (let cc = cs0; cc < cs1; cc++){
+                  masks[j][rr*cSmall + cc] = 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Draw non-overlapping rectangles: largest -> smallest
       ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
-
-      const step = Math.max(2, patchSize|0);
-
-      ctx.beginPath();
-      for (let x = 0; x <= w; x += step){
-        const xx = Math.floor(x) + 0.5;
-        ctx.moveTo(xx, 0);
-        ctx.lineTo(xx, h);
+      ctx.strokeStyle = 'rgba(255,255,255,0.9)';
+      for (let i = S-1; i >= 0; i--){
+        const {ps, rows: rr, cols: cc} = gridDims[i];
+        const mask = masks[i];
+        for (let r = 0; r < rr; r++){
+          for (let c = 0; c < cc; c++){
+            if (!mask[r*cc + c]) continue;
+            const x = c * ps + 0.5;
+            const y = r * ps + 0.5;
+            const ww = Math.min(ps, w - c*ps) - 1;
+            const hh = Math.min(ps, h - r*ps) - 1;
+            if (ww > 0 && hh > 0) ctx.strokeRect(x, y, Math.floor(ww), Math.floor(hh));
+          }
+        }
       }
-      for (let y = 0; y <= h; y += step){
-        const yy = Math.floor(y) + 0.5;
-        ctx.moveTo(0, yy);
-        ctx.lineTo(w, yy);
-      }
-      ctx.stroke();
 
       // Emphasize bounds
       ctx.strokeStyle = 'rgba(255,255,255,0.95)';
@@ -90,10 +292,23 @@
         statsSize.textContent = `${Math.round(w)}×${Math.round(h)}`;
       }
       if (statsTokens){
-        const cols = Math.ceil(w / patchSize);
-        const rows = Math.ceil(h / patchSize);
-        const tokens = cols * rows;
-        statsTokens.textContent = `${tokens} tokens (${cols}×${rows})`;
+        const baseTokens = cols * rows;
+        statsTokens.textContent = `${baseTokens} tokens (${cols}×${rows})`;
+      }
+      if (statsAptTokens){
+        // APT tokens = sum over all selected patches across scales
+        let aptTokens = 0;
+        for (let i = 0; i < S; i++){
+          const {rows: rr, cols: cc} = gridDims[i];
+          const mask = masks[i];
+          let count = 0;
+          for (let k = 0; k < mask.length; k++) count += mask[k];
+          aptTokens += count;
+        }
+        const baseTokens2 = cols * rows;
+        const reduction = baseTokens2 > 0 ? Math.max(0, 1 - aptTokens / baseTokens2) : 0;
+        const pct = Math.round(reduction * 100);
+        statsAptTokens.innerHTML = `${aptTokens} tokens <span class="apt-green">-${pct}%</span>`;
       }
     }
 
@@ -133,6 +348,27 @@
 
     range?.addEventListener('input', onInput);
     number?.addEventListener('input', onInput);
+
+    // Multi-scale UI helpers
+    function updateThresholdRowsDisplay(){
+      const checked = numScalesGroup?.querySelector('input[name="apt-num-scales"]:checked');
+      const S = Math.max(2, Math.min(4, parseInt(checked?.value || '2', 10)));
+      if (thrRows.s2) thrRows.s2.style.display = S >= 2 ? '' : 'none';
+      if (thrRows.s3) thrRows.s3.style.display = S >= 3 ? '' : 'none';
+      if (thrRows.s4) thrRows.s4.style.display = S >= 4 ? '' : 'none';
+    }
+
+    // Threshold sliders handlers (all trigger redraw)
+    function onThrInput(){ scheduleDraw(); }
+    thrRanges.s2?.addEventListener('input', onThrInput);
+    thrRanges.s3?.addEventListener('input', onThrInput);
+    thrRanges.s4?.addEventListener('input', onThrInput);
+
+    // Number of scales handler (radio group)
+    numScalesGroup?.addEventListener('change', () => {
+      updateThresholdRowsDisplay();
+      scheduleDraw();
+    });
 
     // Resize handling using ResizeObserver for snappy updates
     const ro = new ResizeObserver(() => scheduleDraw());
@@ -240,6 +476,11 @@
       shortSideRange.value = String(snapped);
     }
     if (shortSideValue && shortSideRange) shortSideValue.textContent = snapToBase(parseInt(shortSideRange.value||'512',10), patchSize) + ' px';
+    // Initialize thresholds UI display for multi-scale
+    updateThresholdRowsDisplay();
+    if (thrValues.s2 && thrRanges.s2) thrValues.s2.textContent = parseFloat(thrRanges.s2.value||'5.0').toFixed(1);
+    if (thrValues.s3 && thrRanges.s3) thrValues.s3.textContent = parseFloat(thrRanges.s3.value||'5.0').toFixed(1);
+    if (thrValues.s4 && thrRanges.s4) thrValues.s4.textContent = parseFloat(thrRanges.s4.value||'5.0').toFixed(1);
     scheduleDraw();
 
     // Expose minimal API for future multi-size overlays

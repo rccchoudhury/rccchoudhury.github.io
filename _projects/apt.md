@@ -213,7 +213,8 @@ category: work
         <!-- Stats overlay -->
         <div class="apt-overlay">
           <span class="apt-chip"><strong>Size:</strong> <span id="apt-stats-size">—</span></span>
-          <span class="apt-chip"><strong>Tokens:</strong> <span id="apt-stats-tokens">—</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span id="apt-stats-tokens">—</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span id="apt-stats-apt-tokens">—</span></span>
         </div>
         <button class="apt-nav-btn apt-nav-next" type="button" aria-label="Next image" title="Next">
           <i class="fas fa-chevron-right"></i>
@@ -243,6 +244,48 @@ category: work
           </div>
           <div class="control">
             <input id="apt-base-size-number" class="input is-small" type="number" min="8" max="128" step="8" value="16" style="width:90px" aria-label="Base patch size number">
+          </div>
+        </div>
+        <div class="field" style="margin-top: 0.75rem;">
+          <label class="label" style="margin-bottom:0.5rem">Number of Scales</label>
+          <div class="field is-grouped is-align-items-center" id="apt-num-scales-group">
+            <label class="radio"><input type="radio" name="apt-num-scales" value="2" checked> 2</label>
+            <label class="radio" style="margin-left:1rem"><input type="radio" name="apt-num-scales" value="3"> 3</label>
+            <label class="radio" style="margin-left:1rem"><input type="radio" name="apt-num-scales" value="4"> 4</label>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top: 0.75rem;">
+          <label class="label" style="margin-bottom:0.5rem">Entropy Thresholds (bits, multiples of 0.5)</label>
+          <div class="content" style="margin-bottom:0.5rem; color:#666">For S scales, provide S−1 thresholds: largest→smaller.</div>
+          <div id="apt-thresholds-wrap" class="apt-thresholds-wrap">
+            <div class="field is-grouped is-align-items-center apt-thr" id="apt-threshold-row-s2">
+              <div class="control"><span id="apt-threshold-size-s2" class="tag is-info is-light">—</span></div>
+              <div class="control is-expanded">
+                <input id="apt-threshold-range-s2" class="slider is-fullwidth is-info" type="range" min="0" max="10" step="0.5" value="5.0" aria-label="Threshold between largest and next">
+              </div>
+              <div class="control">
+                <span id="apt-threshold-value-s2" class="tag is-light">5.0</span>
+              </div>
+            </div>
+            <div class="field is-grouped is-align-items-center apt-thr" id="apt-threshold-row-s3" style="display:none;">
+              <div class="control"><span id="apt-threshold-size-s3" class="tag is-info is-light">—</span></div>
+              <div class="control is-expanded">
+                <input id="apt-threshold-range-s3" class="slider is-fullwidth is-info" type="range" min="0" max="10" step="0.5" value="5.0" aria-label="Threshold between next and smaller">
+              </div>
+              <div class="control">
+                <span id="apt-threshold-value-s3" class="tag is-light">5.0</span>
+              </div>
+            </div>
+            <div class="field is-grouped is-align-items-center apt-thr" id="apt-threshold-row-s4" style="display:none;">
+              <div class="control"><span id="apt-threshold-size-s4" class="tag is-info is-light">—</span></div>
+              <div class="control is-expanded">
+                <input id="apt-threshold-range-s4" class="slider is-fullwidth is-info" type="range" min="0" max="10" step="0.5" value="5.0" aria-label="Threshold between next and smaller">
+              </div>
+              <div class="control">
+                <span id="apt-threshold-value-s4" class="tag is-light">5.0</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
