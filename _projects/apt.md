@@ -210,6 +210,11 @@ category: work
         </button>
         <img class="apt-img" src="/assets/apt-template/static/images/carousel1.jpg" alt="APT demo image">
         <canvas class="apt-grid-canvas"></canvas>
+        <!-- Stats overlay -->
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span id="apt-stats-size">—</span></span>
+          <span class="apt-chip"><strong>Tokens:</strong> <span id="apt-stats-tokens">—</span></span>
+        </div>
         <button class="apt-nav-btn apt-nav-next" type="button" aria-label="Next image" title="Next">
           <i class="fas fa-chevron-right"></i>
         </button>
@@ -218,6 +223,17 @@ category: work
       <!-- Controls below image -->
       <div class="apt-controls box">
         <h3 class="title is-5">Options</h3>
+        <div class="field" style="margin-bottom: 0.75rem;">
+          <label class="label" style="margin-bottom:0.5rem">Short Side Size</label>
+          <div class="field is-grouped is-align-items-center">
+            <div class="control is-expanded">
+              <input id="apt-short-side-range" class="slider is-fullwidth is-info" type="range" min="224" max="1024" step="16" value="512" aria-label="Short side size">
+            </div>
+            <div class="control">
+              <span id="apt-short-side-value" class="tag is-light">512 px</span>
+            </div>
+          </div>
+        </div>
         <div class="field apt-field">
           <label class="label" for="apt-base-size-range" style="margin-bottom:0">Base patch size</label>
         </div>
