@@ -198,6 +198,43 @@ category: work
 </section>
 <!-- End Examples -->
 
+<!-- Interactive Demo -->
+<section class="section apt-grid-section" id="interactive-demo">
+  <div class="container is-fluid">
+    <h2 class="title is-3">Interactive Demo</h2>
+    <div class="apt-grid-panel">
+      <!-- Demo Figure first (bigger image) -->
+      <figure class="apt-figure apt-grid-demo">
+        <button class="apt-nav-btn apt-nav-prev" type="button" aria-label="Previous image" title="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <img class="apt-img" src="/assets/apt-template/static/images/carousel1.jpg" alt="APT demo image">
+        <canvas class="apt-grid-canvas"></canvas>
+        <button class="apt-nav-btn apt-nav-next" type="button" aria-label="Next image" title="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </figure>
+
+      <!-- Controls below image -->
+      <div class="apt-controls box">
+        <h3 class="title is-5">Options</h3>
+        <div class="field apt-field">
+          <label class="label" for="apt-base-size-range" style="margin-bottom:0">Base patch size</label>
+        </div>
+        <div class="field is-grouped is-align-items-center">
+          <div class="control is-expanded">
+            <input id="apt-base-size-range" class="slider is-fullwidth is-info" step="8" min="8" max="128" value="16" type="range" aria-label="Base patch size">
+          </div>
+          <div class="control">
+            <input id="apt-base-size-number" class="input is-small" type="number" min="8" max="128" step="8" value="16" style="width:90px" aria-label="Base patch size number">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Interactive Demo -->
+
 <!-- Results -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
