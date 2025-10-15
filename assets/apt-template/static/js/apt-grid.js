@@ -49,13 +49,16 @@
     let currentIndex = 0;
     try {
       const cur = img.getAttribute('src') || '';
-      const found = imageList.findIndex(p => cur.endsWith(p));
+      const found = imageList.findIndex(function(p) { return cur.endsWith(p); });
       if (found >= 0) currentIndex = found;
-    } catch {}
+    } catch (e) {}
     // Preload images
-    imageList.forEach(src => { const i = new Image(); i.src = src; });
+    imageList.forEach(function(src) { const i = new Image(); i.src = src; });
 
-    let patchSize = parseInt(range?.value || number?.value || '16', 10);
+    let patchSize = (function(){
+      var v = (range && range.value) ? range.value : ((number && number.value) ? number.value : '16');
+      return parseInt(v, 10);
+    })();
     let rafPending = false;
 
     function setCanvasSize(){
@@ -86,26 +89,26 @@
       const base = Math.max(2, patchSize|0);
       const cols = Math.ceil(w / base);
       const rows = Math.ceil(h / base);
-      const S = (() => {
-        const checked = numScalesGroup?.querySelector('input[name="apt-num-scales"]:checked');
-        const v = parseInt(checked?.value || '2', 10);
+      const S = (function(){
+        const checked = numScalesGroup ? numScalesGroup.querySelector('input[name="apt-num-scales"]:checked') : null;
+        const v = parseInt((checked && checked.value) ? checked.value : '2', 10);
         return Math.max(2, Math.min(4, v));
       })();
-      const patchSizes = Array.from({length: S}, (_, i) => base * Math.pow(2, i)); // ascending
-      const gridDims = patchSizes.map(ps => ({
-        ps,
+      const patchSizes = Array.from({length: S}, function(_, i) { return base * Math.pow(2, i); }); // ascending
+      const gridDims = patchSizes.map(function(ps) { return {
+        ps: ps,
         cols: Math.ceil(w / ps),
         rows: Math.ceil(h / ps),
-      }));
+      }; });
 
       // Update threshold size labels (largest→smaller)
       // Mapping: s2 -> largest (index S-1), s3 -> next (S-2), s4 -> next (S-3)
       const lblS2 = document.getElementById('apt-threshold-size-s2');
       const lblS3 = document.getElementById('apt-threshold-size-s3');
       const lblS4 = document.getElementById('apt-threshold-size-s4');
-      if (lblS2 && S >= 2) lblS2.textContent = `${patchSizes[S-1]} px`;
-      if (lblS3 && S >= 3) lblS3.textContent = `${patchSizes[S-2]} px`;
-      if (lblS4 && S >= 4) lblS4.textContent = `${patchSizes[S-3]} px`;
+      if (lblS2 && S >= 2) lblS2.textContent = patchSizes[S-1] + ' px';
+      if (lblS3 && S >= 3) lblS3.textContent = patchSizes[S-2] + ' px';
+      if (lblS4 && S >= 4) lblS4.textContent = patchSizes[S-3] + ' px';
 
       // Obtain a grayscale image at display size using an offscreen canvas
       const off = document.createElement('canvas');
@@ -167,13 +170,15 @@
       }
 
       // Compute entropy maps for all scales using the integral histograms
-      const entropies = gridDims.map(({ps, cols, rows}) => {
-        const arr = new Float32Array(rows * cols);
-        if (useIntegral){
+      const entropies = gridDims.map(function({rows, cols}) { return new Float32Array(rows * cols); });
+      if (useIntegral){
+        for (let i = 0; i < gridDims.length; i++){
+          const {rows, cols} = gridDims[i];
+          const arr = entropies[i];
           for (let r = 0; r < rows; r++){
             for (let c = 0; c < cols; c++){
-              const x0 = c * ps, y0 = r * ps;
-              const x1 = Math.min(x0 + ps, W), y1 = Math.min(y0 + ps, H);
+              const x0 = c * gridDims[i].ps, y0 = r * gridDims[i].ps;
+              const x1 = Math.min(x0 + gridDims[i].ps, W), y1 = Math.min(y0 + gridDims[i].ps, H);
               const area = (x1 - x0) * (y1 - y0) || 1;
               let Hsum = 0;
               for (let b = 0; b < bins; b++){
@@ -186,14 +191,17 @@
               arr[r*cols + c] = Hsum;
             }
           }
-        } else {
-          // Direct per-patch histogram counting for high bin counts
-          const hist = new Uint16Array(bins);
+        }
+      } else {
+        // Direct per-patch histogram counting for high bin counts
+        for (let i = 0; i < gridDims.length; i++){
+          const {rows, cols} = gridDims[i];
+          const arr = entropies[i];
           for (let r = 0; r < rows; r++){
             for (let c = 0; c < cols; c++){
-              hist.fill(0);
-              const x0 = c * ps, y0 = r * ps;
-              const x1 = Math.min(x0 + ps, W), y1 = Math.min(y0 + ps, H);
+              const hist = new Uint16Array(bins);
+              const x0 = c * gridDims[i].ps, y0 = r * gridDims[i].ps;
+              const x1 = Math.min(x0 + gridDims[i].ps, W), y1 = Math.min(y0 + gridDims[i].ps, H);
               const area = (x1 - x0) * (y1 - y0) || 1;
               for (let y = y0; y < y1; y++){
                 const baseIdx = y * W + x0;
@@ -213,28 +221,28 @@
             }
           }
         }
-        return arr;
-      });
+      }
 
       // Read thresholds in bits for S-1 levels (order: largest -> smaller)
       const thrBitsList = [];
-      if (S >= 2) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s2?.value || '5.0'))));
-      if (S >= 3) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s3?.value || '5.0'))));
-      if (S >= 4) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat(thrRanges.s4?.value || '5.0'))));
+      if (S >= 2) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat((thrRanges.s2 && thrRanges.s2.value) ? thrRanges.s2.value : '5.0'))));
+      if (S >= 3) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat((thrRanges.s3 && thrRanges.s3.value) ? thrRanges.s3.value : '5.0'))));
+      if (S >= 4) thrBitsList.push(Math.min(maxEntropy, Math.max(0, parseFloat((thrRanges.s4 && thrRanges.s4.value) ? thrRanges.s4.value : '5.0'))));
       // Update displayed values (snap to 0.5 step already enforced by input)
       if (thrValues.s2 && thrRanges.s2) thrValues.s2.textContent = parseFloat(thrRanges.s2.value).toFixed(1);
       if (thrValues.s3 && thrRanges.s3) thrValues.s3.textContent = parseFloat(thrRanges.s3.value).toFixed(1);
       if (thrValues.s4 && thrRanges.s4) thrValues.s4.textContent = parseFloat(thrRanges.s4.value).toFixed(1);
 
       // Create masks per scale (Uint8Array) and apply hierarchical non-overlap
-      const masks = gridDims.map(({rows, cols}) => new Uint8Array(rows * cols));
+      const masks = gridDims.map(function({rows, cols}) { return new Uint8Array(rows * cols); });
       // Smallest scale (index 0) defaults to 1 (selected)
       masks[0].fill(1);
       // For larger scales i=1..S-1: select where entropy < threshold_i (indexing thr over largest->smaller)
       for (let i = S-1; i >= 1; i--){
         const {rows, cols} = gridDims[i];
         const ent = entropies[i];
-        const thrBits = thrBitsList[(S-1) - i] ?? maxEntropy; // thresholds[0] -> largest (i=S-1)
+        var _tb = thrBitsList[(S-1) - i];
+        const thrBits = (_tb === undefined || _tb === null) ? maxEntropy : _tb; // thresholds[0] -> largest (i=S-1)
         const mask = masks[i];
         for (let r = 0; r < rows; r++){
           for (let c = 0; c < cols; c++){
@@ -289,11 +297,11 @@
 
       // Update stats overlay
       if (statsSize){
-        statsSize.textContent = `${Math.round(w)}×${Math.round(h)}`;
+        statsSize.textContent = Math.round(w) + '×' + Math.round(h);
       }
       if (statsTokens){
         const baseTokens = cols * rows;
-        statsTokens.textContent = `${baseTokens} tokens (${cols}×${rows})`;
+        statsTokens.textContent = baseTokens + ' tokens (' + cols + '×' + rows + ')';
       }
       if (statsAptTokens){
         // APT tokens = sum over all selected patches across scales
@@ -308,7 +316,7 @@
         const baseTokens2 = cols * rows;
         const reduction = baseTokens2 > 0 ? Math.max(0, 1 - aptTokens / baseTokens2) : 0;
         const pct = Math.round(reduction * 100);
-        statsAptTokens.innerHTML = `${aptTokens} tokens <span class="apt-green">-${pct}%</span>`;
+        statsAptTokens.innerHTML = aptTokens + ' tokens <span class="apt-green">-' + pct + '%</span>';
       }
     }
 
@@ -346,13 +354,13 @@
       scheduleDraw();
     }
 
-    range?.addEventListener('input', onInput);
-    number?.addEventListener('input', onInput);
+    if (range) range.addEventListener('input', onInput);
+    if (number) number.addEventListener('input', onInput);
 
     // Multi-scale UI helpers
     function updateThresholdRowsDisplay(){
-      const checked = numScalesGroup?.querySelector('input[name="apt-num-scales"]:checked');
-      const S = Math.max(2, Math.min(4, parseInt(checked?.value || '2', 10)));
+      const checked = numScalesGroup ? numScalesGroup.querySelector('input[name="apt-num-scales"]:checked') : null;
+      const S = Math.max(2, Math.min(4, parseInt((checked && checked.value) ? checked.value : '2', 10)));
       if (thrRows.s2) thrRows.s2.style.display = S >= 2 ? '' : 'none';
       if (thrRows.s3) thrRows.s3.style.display = S >= 3 ? '' : 'none';
       if (thrRows.s4) thrRows.s4.style.display = S >= 4 ? '' : 'none';
@@ -360,18 +368,18 @@
 
     // Threshold sliders handlers (all trigger redraw)
     function onThrInput(){ scheduleDraw(); }
-    thrRanges.s2?.addEventListener('input', onThrInput);
-    thrRanges.s3?.addEventListener('input', onThrInput);
-    thrRanges.s4?.addEventListener('input', onThrInput);
+    if (thrRanges.s2) thrRanges.s2.addEventListener('input', onThrInput);
+    if (thrRanges.s3) thrRanges.s3.addEventListener('input', onThrInput);
+    if (thrRanges.s4) thrRanges.s4.addEventListener('input', onThrInput);
 
     // Number of scales handler (radio group)
-    numScalesGroup?.addEventListener('change', () => {
+    if (numScalesGroup) numScalesGroup.addEventListener('change', function() {
       updateThresholdRowsDisplay();
       scheduleDraw();
     });
 
     // Resize handling using ResizeObserver for snappy updates
-    const ro = new ResizeObserver(() => scheduleDraw());
+    const ro = new ResizeObserver(function() { scheduleDraw(); });
     ro.observe(img);
     ro.observe(root);
 
@@ -400,7 +408,7 @@
       const snappedMax = Math.max(224, snapDownToBase(natShort, patchSize));
       shortSideRange.max = String(snappedMax);
       // Ensure the current value obeys new bounds and step increments
-      const current = parseInt(shortSideRange.value || String(snappedMax), 10);
+      const current = parseInt(shortSideRange.value||String(snappedMax), 10);
       let nextVal = Math.min(snappedMax, current);
       nextVal = snapToBase(nextVal, patchSize);
       if (String(nextVal) !== shortSideRange.value) shortSideRange.value = String(nextVal);
@@ -426,7 +434,7 @@
     }
 
     // Redraw when image loads (important for initial sizing)
-    const onImgLoad = () => {
+    const onImgLoad = function() {
       // Default the slider to the image's short side snapped to current base
       if (shortSideRange && img.naturalWidth && img.naturalHeight){
         const short = Math.min(img.naturalWidth, img.naturalHeight);
@@ -450,11 +458,11 @@
         scheduleDraw();
       }
     }
-    prevBtn?.addEventListener('click', () => setImageByIndex(currentIndex - 1));
-    nextBtn?.addEventListener('click', () => setImageByIndex(currentIndex + 1));
+    if (prevBtn) prevBtn.addEventListener('click', function() { setImageByIndex(currentIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { setImageByIndex(currentIndex + 1); });
 
     // Short side handler (reactive)
-    shortSideRange?.addEventListener('input', () => {
+    if (shortSideRange) shortSideRange.addEventListener('input', function() {
       // Snap slider UI to current base patch size increments for a discrete feel
       if (shortSideRange){
         const snapped = snapToBase(parseInt(shortSideRange.value,10), patchSize);

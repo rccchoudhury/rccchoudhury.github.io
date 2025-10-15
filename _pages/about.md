@@ -27,6 +27,6 @@ I'm a final-year PhD student at Carnegie Mellon University's [Robotics Institute
 I'm currently also a Student Researcher at [ByteDance Seed](https://seed.bytedance.com/en/), collaborating with [Peter Lin](https://www.linkedin.com/in/shanchuanlin/) and [Lu Jiang](http://www.lujiang.info/) on accelerating video generation. 
 I previously interned at [Meta FAIR](https://ai.meta.com/research/), working with [Jing Huang](https://superirabbit.github.io/) on efficient video understanding.
 
-Before my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), developing trajectory forecasting models for self-driving vehicles, and earned my bachelor's degree from [Caltech](https://www.caltech.edu/), where I explored multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/).
+Before my PhD, I was a software engineer at [Nuro](https://www.nuro.ai/), developing trajectory forecasting models for self-driving vehicles, and graduated from [Caltech](https://www.caltech.edu/), where I explored multi-agent reinforcement learning with [Yisong Yue](https://www.yisongyue.com/).
 
 Outside of research, I enjoy running, weightlifting, watching sports, and listening to electronic music.
