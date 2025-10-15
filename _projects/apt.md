@@ -156,7 +156,7 @@ category: work
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Examples</h2>
+      <h2 class="title is-3">Examples - Classification</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
@@ -179,16 +179,112 @@ category: work
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="/assets/apt-template/static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="/assets/apt-template/static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Fourth image description.
+        </h2>
+      </div>
     </div>
   </div>
 </div>
+</section>
+<!-- End Examples -->
+
+<!-- Examples -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Examples - Object Detection</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <!-- <div class="item">
+        <img src="/assets/apt-template/static/images/det_img1.png" alt="Detection result 1" loading="lazy"/>
+      </div> -->
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img2.png" alt="Detection result 2" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img3.png" alt="Detection result 3" loading="lazy"/>
+     </div>
+     <div class="item">
+      <img src="/assets/apt-template/static/images/det_img4.png" alt="Detection result 4" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img5.png" alt="Detection result 5" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img6.png" alt="Detection result 6" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img7.png" alt="Detection result 7" loading="lazy"/>
+      </div>
+      <!-- <div class="item">
+        <img src="/assets/apt-template/static/images/det_img8.png" alt="Detection result 8" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img9.png" alt="Detection result 9" loading="lazy"/>
+      </div> -->
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img10.png" alt="Detection result 10" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/det_img11.png" alt="Detection result 11" loading="lazy"/>
+      </div>
+      <!-- <div class="item">
+        <img src="/assets/apt-template/static/images/det_img12.png" alt="Detection result 12" loading="lazy"/>
+      </div> -->
+    </div>
+  </div>
+</div>
+</section>
+<!-- End Examples -->
+
+<!-- Examples -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Examples - Semantic Segmentation</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img1.png" alt="Segmentation result 1" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img2.png" alt="Segmentation result 2" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img3.png" alt="Segmentation result 3" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img4.png" alt="Segmentation result 4" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img5.png" alt="Segmentation result 5" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img6.png" alt="Segmentation result 6" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img7.png" alt="Segmentation result 7" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img8.png" alt="Segmentation result 8" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img9.png" alt="Segmentation result 9" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img10.png" alt="Segmentation result 10" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img11.png" alt="Segmentation result 11" loading="lazy"/>
+      </div>
+      <div class="item">
+        <img src="/assets/apt-template/static/images/seg_img12.png" alt="Segmentation result 12" loading="lazy"/>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 <!-- End Examples -->
@@ -290,7 +386,7 @@ category: work
 <!-- End Interactive Demo -->
 
 <!-- Results -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -320,7 +416,7 @@ category: work
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End Results -->
 
 
