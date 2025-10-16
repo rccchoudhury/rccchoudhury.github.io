@@ -21,7 +21,11 @@
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    {% assign container_classes = "container mt-5" %}
+    {% if page.layout == 'apt_project' or page.permalink == '/apt/' %}
+      {% assign container_classes = "container" %}
+    {% endif %}
+    <div class="{{ container_classes }}" role="main">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
