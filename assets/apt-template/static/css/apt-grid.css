@@ -24,6 +24,7 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background-color: #000;
 }
 
 .apt-img {
@@ -147,6 +148,11 @@
   margin-bottom: 0.25rem;
 }
 
+/* Make threshold section span full width */
+.apt-grid-section .apt-controls.box > .field:has(#apt-thresholds-wrap) {
+  grid-column: 1 / -1;
+}
+
 .apt-grid-section .apt-controls.box .field {
   margin-bottom: 0; /* tighten vertical space */
 }
@@ -176,12 +182,16 @@
 /* Horizontal, wrapping threshold sliders */
 .apt-thresholds-wrap {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .apt-thresholds-wrap .apt-thr {
-  flex: 1 1 320px; /* grow, shrink, min width */
+  flex: 1 1 0;
+  min-width: 0;
   margin: 0;
 }
 

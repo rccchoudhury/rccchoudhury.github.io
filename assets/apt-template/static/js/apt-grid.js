@@ -40,10 +40,14 @@
 
     // Image list for carousel navigation
     const imageList = [
-      '/assets/apt-template/static/images/carousel1.jpg',
-      '/assets/apt-template/static/images/carousel2.jpg',
-      '/assets/apt-template/static/images/carousel3.jpg',
-      '/assets/apt-template/static/images/carousel4.jpg'
+      '/assets/apt-imgs/golden_gate3.jpg',
+      '/assets/apt-imgs/joshua_tree.jpg',
+      '/assets/apt-imgs/lost_coast.jpg',
+      '/assets/apt-imgs/mojave.jpg',
+      '/assets/apt-imgs/palace.jpg',
+      '/assets/apt-imgs/death_valley.jpg',
+      '/assets/apt-imgs/blackboard.jpg',
+      '/assets/apt-imgs/apt.jpg'
     ];
     // Attempt to infer current index from src
     let currentIndex = 0;
@@ -274,7 +278,7 @@
       }
 
       // Draw non-overlapping rectangles: largest -> smallest
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 0.75;
       ctx.strokeStyle = 'rgba(255,255,255,0.9)';
       for (let i = S-1; i >= 0; i--){
         const {ps, rows: rr, cols: cc} = gridDims[i];
