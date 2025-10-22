@@ -86,6 +86,7 @@
   display: inline-flex;
   gap: 8px;
   z-index: 3; /* above grid and image */
+  opacity: 1; /* always visible */
 }
 
 .apt-overlay .apt-chip {
@@ -108,6 +109,16 @@
 .apt-overlay .apt-chip .apt-green {
   color: #22c55e !important; /* tailwind-ish green-500 */
   font-weight: 700;
+}
+
+/* Carousel items need relative positioning for overlays */
+.carousel .item {
+  position: relative;
+}
+
+/* Make overlays always visible in carousel items */
+.carousel .item .apt-overlay {
+  opacity: 1;
 }
 
 /* Small helper for control labels */
