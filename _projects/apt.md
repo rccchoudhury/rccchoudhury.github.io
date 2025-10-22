@@ -25,20 +25,20 @@ category: work
             <div class="is-size-6 publication-authors" style="font-family:'Roboto', Inter, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; font-size:1.12rem; margin-bottom:0.15rem;">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a>Rohan Choudhury*</a><sup>1</sup>,</span>
+                <a href="https://rccchoudhury.github.io/" target="_blank">Rohan Choudhury*</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a>Jung Eun Kim*</a><sup>2,3</sup>,</span>
+                <a href="https://jungeun122333.github.io/" target="_blank">JungEun Kim*</a><sup>2,3</sup>,</span>
               <span class="author-block">
-                <a>Jinhyung Park</a><sup>1</sup>,
+                <a href="https://jindapark.github.io/" target="_blank">Jinhyung Park</a><sup>1</sup>,
               </span>
                 <span class="author-block">
-                <a>Eunho Yang</a><sup>2</sup>,
+                <a href="https://mli.kaist.ac.kr/" target="_blank">Eunho Yang</a><sup>2</sup>,
               </span>
                 <span class="author-block">
-                <a>László A. Jeni</a><sup>1</sup>,
+                <a href="https://www.laszlojeni.com/" target="_blank">László A. Jeni</a><sup>1</sup>,
               </span>
                 <span class="author-block">
-                <a>Kris M. Kitani</a><sup>1</sup>
+                <a href="https://kriskitani.github.io/" target="_blank">Kris M. Kitani</a><sup>1</sup>
               </span>
             </div>
             <div class="is-size-6 publication-authors" style="font-family:'Roboto', Inter, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; font-size:1.0rem; margin-top:0.05rem; margin-bottom:0.15rem;">
@@ -292,44 +292,104 @@ category: work
 <!-- Examples -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Examples - Object Detection</h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Object Detection Examples (EVA02-L-1536)</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <!-- <div class="item">
         <img src="/assets/apt-template/static/images/det_img1.png" alt="Detection result 1" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1023</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6144 tokens (97×64)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>5313 tokens <span class="apt-green">-14%</span></span></span>
+        </div>
       </div> -->
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img2.png" alt="Detection result 2" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1025</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6240 tokens (97×65)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>3111 tokens <span class="apt-green">-50%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img3.png" alt="Detection result 3" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1022</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6144 tokens (97×64)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>5205 tokens <span class="apt-green">-15%</span></span></span>
+        </div>
      </div>
      <div class="item">
       <img src="/assets/apt-template/static/images/det_img4.png" alt="Detection result 4" loading="lazy"/>
+      <div class="apt-overlay">
+        <span class="apt-chip"><strong>Size:</strong> <span>1536×1056</span></span>
+        <span class="apt-chip"><strong>Base Tokens:</strong> <span>6336 tokens (96×66)</span></span>
+        <span class="apt-chip"><strong>APT Tokens:</strong> <span>3297 tokens <span class="apt-green">-48%</span></span></span>
+      </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img5.png" alt="Detection result 5" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1022</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6144 tokens (97×64)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>5235 tokens <span class="apt-green">-15%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img6.png" alt="Detection result 6" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1027</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6240 tokens (97×65)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>3843 tokens <span class="apt-green">-38%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img7.png" alt="Detection result 7" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1152</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6912 tokens (96×72)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>5754 tokens <span class="apt-green">-17%</span></span></span>
+        </div>
       </div>
       <!-- <div class="item">
         <img src="/assets/apt-template/static/images/det_img8.png" alt="Detection result 8" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1051×1536</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6336 tokens (66×96)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>4107 tokens <span class="apt-green">-35%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img9.png" alt="Detection result 9" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1109×1536</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6720 tokens (70×96)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>5199 tokens <span class="apt-green">-23%</span></span></span>
+        </div>
       </div> -->
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img10.png" alt="Detection result 10" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1025</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6240 tokens (97×65)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>4077 tokens <span class="apt-green">-34%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/det_img11.png" alt="Detection result 11" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1018</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>6144 tokens (97×64)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>4284 tokens <span class="apt-green">-30%</span></span></span>
+        </div>
       </div>
       <!-- <div class="item">
         <img src="/assets/apt-template/static/images/det_img12.png" alt="Detection result 12" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1536×1536</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>9216 tokens (96×96)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>6489 tokens <span class="apt-green">-30%</span></span></span>
+        </div>
       </div> -->
     </div>
   </div>
@@ -340,44 +400,104 @@ category: work
 <!-- Examples -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Examples - Semantic Segmentation</h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Semantic Segmentation Examples (EVA02-L-640)</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <img src="/assets/apt-template/static/images/seg_img1.png" alt="Segmentation result 1" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>961×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2440 tokens (61×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>2009 tokens <span class="apt-green">-18%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img2.png" alt="Segmentation result 2" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>640×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>1600 tokens (40×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>580 tokens <span class="apt-green">-64%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img3.png" alt="Segmentation result 3" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>854×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2160 tokens (54×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1701 tokens <span class="apt-green">-21%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img4.png" alt="Segmentation result 4" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>640×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>1600 tokens (40×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>823 tokens <span class="apt-green">-49%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img5.png" alt="Segmentation result 5" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>640×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>1600 tokens (40×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1123 tokens <span class="apt-green">-30%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img6.png" alt="Segmentation result 6" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>640×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>1600 tokens (40×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>856 tokens <span class="apt-green">-46%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img7.png" alt="Segmentation result 7" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>851×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2160 tokens (54×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1638 tokens <span class="apt-green">-24%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img8.png" alt="Segmentation result 8" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>1010×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2560 tokens (64×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1894 tokens <span class="apt-green">-26%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img9.png" alt="Segmentation result 9" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>640×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>1600 tokens (40×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1030 tokens <span class="apt-green">-36%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img10.png" alt="Segmentation result 10" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>854×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2160 tokens (54×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1527 tokens <span class="apt-green">-29%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img11.png" alt="Segmentation result 11" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>866×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2200 tokens (55×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1610 tokens <span class="apt-green">-27%</span></span></span>
+        </div>
       </div>
       <div class="item">
         <img src="/assets/apt-template/static/images/seg_img12.png" alt="Segmentation result 12" loading="lazy"/>
+        <div class="apt-overlay">
+          <span class="apt-chip"><strong>Size:</strong> <span>960×640</span></span>
+          <span class="apt-chip"><strong>Base Tokens:</strong> <span>2400 tokens (60×40)</span></span>
+          <span class="apt-chip"><strong>APT Tokens:</strong> <span>1773 tokens <span class="apt-green">-26%</span></span></span>
+        </div>
       </div>
     </div>
   </div>
