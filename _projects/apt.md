@@ -98,14 +98,24 @@ category: work
           <video id="apt-video-standard" autoplay controls muted loop style="width:100%; aspect-ratio:16 / 9; height:auto; border-radius:8px;" preload="metadata">
             <source src="/assets/apt-template/static/apt_vis_720p_5s_slow_16x16_grid.mp4" type="video/mp4">
           </video>
+          <div class="has-text-centered" style="margin-top:0.15rem; font-size: 0.65rem; line-height:1.05; color:#666;">
+            <span>Source video: <a href="https://www.youtube.com/watch?v=ekr2nIex040" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ekr2nIex040</a></span>
+          </div>
           <div class="has-text-centered" style="margin-top:0.5rem; font-weight:600;">Standard Patches</div>
         </div>
         <div class="column">
           <video id="apt-video-ours" autoplay controls muted loop style="width:100%; aspect-ratio:16 / 9; height:auto; border-radius:8px;" preload="metadata">
             <source src="/assets/apt-template/static/apt_vis_720p_5s_slow.mp4?v=2" type="video/mp4">
           </video>
+          <div class="has-text-centered" style="margin-top:0.15rem; font-size: 0.65rem; line-height:1.05; color:#666;">
+            <span>Source video: <a href="https://www.youtube.com/watch?v=ekr2nIex040" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ekr2nIex040</a></span>
+          </div>
           <div class="has-text-centered" style="margin-top:0.5rem; font-weight:600;">APT (ours)</div>
         </div>
+      </div>
+
+      <div class="content has-text-centered" style="margin-top: 0.75rem;">
+        <p style="margin-bottom: 0.25rem;">Standard ViT patchification compared to APT (ours) run frame-by-frame on a video. We dynamically allocate different patch sizes, significantly reducing the number of input tokens while incurring no loss on downstream tasks.</p>
       </div>
 
       <script>
@@ -186,6 +196,15 @@ category: work
 </section>
 <!-- End paper abstract -->
 
+<!-- Abstract video (separate wider section) -->
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 1.25rem;">
+  <div class="container is-fluid" style="max-width: 1100px;">
+    <h2 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">Method Overview</h2>
+    <div class="has-text-centered">
+      {% include video.liquid path="/assets/videos/apt_animation.mp4" cache_bust=true controls=true muted=true loop=true width="100%" height="460" class="apt-abstract-video" %}
+    </div>
+  </div>
+</section>
 
 <!-- Interactive Demo -->
 <section class="section apt-grid-section" id="interactive-demo">
@@ -282,48 +301,6 @@ category: work
   </div>
 </section>
 <!-- End Interactive Demo -->
-
-<!-- Examples -->
-<!-- Examples -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Examples - Classification</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="/assets/apt-template/static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="/assets/apt-template/static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="/assets/apt-template/static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="/assets/apt-template/static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Fourth image description.
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-<!-- End Examples -->
 
 <!-- Examples -->
 <section class="hero is-small">
