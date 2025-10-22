@@ -60,24 +60,11 @@ category: work
   </span>
   <!-- arXiv Link -->
   <span class="link-block">
-    <a href="" target="_blank" class="external-link button is-rounded is-dark" style="padding:0.35rem 0.65rem; line-height:1.1;">
+    <a href="https://arxiv.org/abs/2510.18091" target="_blank" class="external-link button is-rounded is-dark" style="padding:0.35rem 0.65rem; line-height:1.1;">
       <span class="icon">
         <i class="ai ai-arxiv"></i>
       </span>
       <span>arXiv</span>
-    </a>
-  </span>
-  <!-- Hugging Face Link -->
-  <span class="link-block">
-    <a href="" target="_blank" class="external-link button is-rounded is-dark" style="padding:0.35rem 0.65rem; line-height:1.1;">
-      <span class="icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
-          <path d="M20.25 15a3.75 3.75 0 0 1-3.75 3.75H7.5A3.75 3.75 0 0 1 3.75 15V12a3.75 3.75 0 0 1 3.75-3.75h9A3.75 3.75 0 0 1 20.25 12Z"></path>
-          <path d="M9.43 8.34c.45-1.33 1.83-2.2 3.32-1.95 1.7.29 2.95 1.79 2.66 3.49"></path>
-          <path d="M14.57 15.66c-.45 1.33-1.83 2.2-3.32 1.95-1.7-.29-2.95-1.79-2.66-3.49"></path>
-        </svg>
-      </span>
-      <span>Hugging Face</span>
     </a>
   </span>
 </div>
@@ -216,7 +203,7 @@ category: work
         <button class="apt-nav-btn apt-nav-prev" type="button" aria-label="Previous image" title="Previous">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <img class="apt-img" src="/assets/apt-template/static/images/carousel1.jpg" alt="APT demo image">
+        <img class="apt-img" src="/assets/apt-imgs/golden_gate3.jpg" alt="APT demo image">
         <canvas class="apt-grid-canvas"></canvas>
         <!-- Stats overlay -->
         <div class="apt-overlay">
@@ -413,12 +400,13 @@ category: work
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@inproceedings{choudhury2026apt,
-  title={Accelerating Vision Transformers With Adaptive Patch Sizes},
-  author={Rohan Choudhury and Jung Eun Kim and Jinhyung Park and Eunho Yang and L{\'a}szl{\'o} A. Jeni and Kris M. Kitani},
-  booktitle={International Conference on Learning Representations},
-  year={2026},
-  url={/apt/}
+      <pre id="bibtex-code"><code>@article{choudhury2025apt,
+  title={Accelerating Vision Transformers with Adaptive Patch Sizes},
+  author={Choudhury, Rohan and Kim, JungEun and Park, Jinhyung and Yang, Eunho and Jeni, L{\'a}szl{\'o} A. and Kitani, Kris M.},
+  journal={arXiv preprint arXiv:2510.18091},
+  year={2025},
+  url={https://arxiv.org/abs/2510.18091},
+  doi={10.48550/arXiv.2510.18091}
 }</code></pre>
     </div>
 </section>
