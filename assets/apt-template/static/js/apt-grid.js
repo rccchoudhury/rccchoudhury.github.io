@@ -278,7 +278,7 @@
       }
 
       // Draw non-overlapping rectangles: largest -> smallest
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 0.75;
       ctx.strokeStyle = 'rgba(255,255,255,0.9)';
       for (let i = S-1; i >= 0; i--){
         const {ps, rows: rr, cols: cc} = gridDims[i];
