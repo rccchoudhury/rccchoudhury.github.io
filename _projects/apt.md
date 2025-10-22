@@ -25,20 +25,20 @@ category: work
             <div class="is-size-6 publication-authors" style="font-family:'Roboto', Inter, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; font-size:1.12rem; margin-bottom:0.15rem;">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a>Rohan Choudhury*</a><sup>1</sup>,</span>
+                <a href="https://rccchoudhury.github.io/" target="_blank">Rohan Choudhury*</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a>Jung Eun Kim*</a><sup>2,3</sup>,</span>
+                <a href="https://jungeun122333.github.io/" target="_blank">JungEun Kim*</a><sup>2,3</sup>,</span>
               <span class="author-block">
-                <a>Jinhyung Park</a><sup>1</sup>,
+                <a href="https://jindapark.github.io/" target="_blank">Jinhyung Park</a><sup>1</sup>,
               </span>
                 <span class="author-block">
-                <a>Eunho Yang</a><sup>2</sup>,
+                <a href="https://mli.kaist.ac.kr/" target="_blank">Eunho Yang</a><sup>2</sup>,
               </span>
                 <span class="author-block">
-                <a>László A. Jeni</a><sup>1</sup>,
+                <a href="https://www.laszlojeni.com/" target="_blank">László A. Jeni</a><sup>1</sup>,
               </span>
                 <span class="author-block">
-                <a>Kris M. Kitani</a><sup>1</sup>
+                <a href="https://kriskitani.github.io/" target="_blank">Kris M. Kitani</a><sup>1</sup>
               </span>
             </div>
             <div class="is-size-6 publication-authors" style="font-family:'Roboto', Inter, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif; font-size:1.0rem; margin-top:0.05rem; margin-bottom:0.15rem;">
@@ -305,8 +305,8 @@ category: work
 <!-- Examples -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Examples - Object Detection</h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Object Detection Examples (EVA02-L-1536)</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <!-- <div class="item">
         <img src="/assets/apt-template/static/images/det_img1.png" alt="Detection result 1" loading="lazy"/>
@@ -413,8 +413,8 @@ category: work
 <!-- Examples -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Examples - Semantic Segmentation</h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Semantic Segmentation Examples (EVA02-L-640)</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <img src="/assets/apt-template/static/images/seg_img1.png" alt="Segmentation result 1" loading="lazy"/>
@@ -533,12 +533,14 @@ category: work
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@inproceedings{choudhury2026apt,
-  title={Accelerating Vision Transformers With Adaptive Patch Sizes},
-  author={Rohan Choudhury and JungEun Kim and Jinhyung Park and Eunho Yang and L{\'a}szl{\'o} A. Jeni and Kris M. Kitani},
-  booktitle={International Conference on Learning Representations},
-  year={2026},
-  url={/apt/}
+      <pre id="bibtex-code"><code>@misc{choudhury2025acceleratingvisiontransformersadaptive,
+      title={Accelerating Vision Transformers with Adaptive Patch Sizes}, 
+      author={Rohan Choudhury and JungEun Kim and Jinhyung Park and Eunho Yang and L\'{a}szl\'{o} A. Jeni and Kris M. Kitani},
+      year={2025},
+      eprint={2510.18091},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.18091}, 
 }</code></pre>
     </div>
 </section>
