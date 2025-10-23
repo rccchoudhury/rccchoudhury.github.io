@@ -51,11 +51,11 @@ category: work
               <div class="publication-links" style="margin-top:0.15rem; margin-bottom:0.15rem; display:inline-flex; align-items:center; gap:0.3rem;">
   <!-- Code Link -->
   <span class="link-block">
-    <a href="" target="_blank" class="external-link button is-rounded is-dark" style="padding:0.35rem 0.65rem; line-height:1.1;">
+    <a href="https://github.com/rccchoudhury/apt" target="_blank" class="external-link button is-rounded is-dark" style="padding:0.35rem 0.65rem; line-height:1.1;">
       <span class="icon">
         <i class="fab fa-github"></i>
       </span>
-      <span>Code</span>
+      <span>Code (Coming Soon)</span>
     </a>
   </span>
   <!-- arXiv Link -->

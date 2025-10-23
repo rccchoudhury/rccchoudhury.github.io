@@ -414,6 +414,10 @@ code {
   box-shadow: var(--shadow-md);
 }
 
+.copy-bibtex-btn .copy-text {
+  color: white;
+}
+
 .copy-bibtex-btn.copied {
   background: #10b981;
 }
