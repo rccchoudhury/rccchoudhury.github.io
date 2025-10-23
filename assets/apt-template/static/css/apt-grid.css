@@ -112,6 +112,41 @@
   font-weight: 700;
 }
 
+/* New compact chip style for detection/segmentation overlays */
+.apt-chip2 {
+  position: absolute !important;
+  left: 25% !important;
+  transform: translateX(-50%) !important;
+  z-index: 999 !important;
+  background: rgba(0,0,0,0.8) !important;
+  color: #fff !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  white-space: nowrap !important;
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
+}
+
+.apt-chip2 * {
+  color: #fff !important;
+}
+
+.apt-chip2 .apt-green {
+  color: #22c55e !important;
+  font-weight: 700;
+}
+
+/* Position for top quadrant (base tokens) - at bottom of upper image */
+.apt-chip2-top {
+  bottom: 50% !important;
+  transform: translate(-50%, calc(50% - 25px)) !important;
+}
+
+/* Position for bottom quadrant (apt tokens) - at bottom of lower image */
+.apt-chip2-bottom {
+  bottom: 30px !important;
+}
+
 /* Carousel items need relative positioning for overlays */
 .carousel .item {
   position: relative;
