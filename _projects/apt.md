@@ -188,7 +188,7 @@ category: work
   <div class="container is-fluid" style="max-width: 1100px;">
     <h2 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">Method Overview</h2>
     <div class="has-text-centered">
-      {% include video.liquid path="/assets/videos/apt_animation.mp4" cache_bust=true controls=true muted=true loop=true width="100%" height="460" class="apt-abstract-video" %}
+      {% include video.liquid path="/assets/videos/apt_animation.mp4" cache_bust=true controls=true muted=true loop=false width="100%" height="460" class="apt-abstract-video" %}
     </div>
   </div>
 </section>
